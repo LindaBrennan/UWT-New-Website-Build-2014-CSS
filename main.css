@@ -10,80 +10,90 @@
       LANDING PAGE
       DETAILS PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
+      ORBIT SLIDESHOW
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
 
 -----------------------------------*/ 
 
 /*-----------1. Fonts-----------*/
+/*This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com*/
 
-/*
-See test page for how to implement and available font weights: 
-https://fonts.uwgt.org/fonts-test.html
-This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype Imaging with any questions regarding Web Fonts: http://webfonts.fonts.com
-*/
-
-
-@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=590742f3-f330-40ea-b927-8e40f1a216b7");
+/*@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=590742f3-f330-40ea-b927-8e40f1a216b7");
 @font-face{
 font-family:"Avenir LT W01 85 Heavy";
-src:url("http://fonts.uwgt.org/Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
+src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix");
+src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"),url("Fonts/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("Fonts/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("Fonts/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
 }
 @font-face{
 font-family:"Avenir LT W01 45 Book";
-src:url("http://fonts.uwgt.org/Fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/849bc5b9-a2ff-4343-977b-26ba8bd24a60.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/f67fa3b5-c1d1-488f-8e60-a828b9ad56a4.svg#f67fa3b5-c1d1-488f-8e60-a828b9ad56a4") format("svg");
+src:url("Fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix");
+src:url("Fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix") format("eot"),url("Fonts/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff"),url("Fonts/849bc5b9-a2ff-4343-977b-26ba8bd24a60.ttf") format("truetype"),url("Fonts/f67fa3b5-c1d1-488f-8e60-a828b9ad56a4.svg#f67fa3b5-c1d1-488f-8e60-a828b9ad56a4") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-45BookObliq";
-src:url("http://fonts.uwgt.org/Fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/dd6da407-70fe-4aa3-a1c7-64f0cb086f01.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/c7f424be-90e1-45b8-b617-ee3589a859bd.svg#c7f424be-90e1-45b8-b617-ee3589a859bd") format("svg");
+src:url("Fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix");
+src:url("Fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix") format("eot"),url("Fonts/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff"),url("Fonts/dd6da407-70fe-4aa3-a1c7-64f0cb086f01.ttf") format("truetype"),url("Fonts/c7f424be-90e1-45b8-b617-ee3589a859bd.svg#c7f424be-90e1-45b8-b617-ee3589a859bd") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-55Oblique";
-src:url("http://fonts.uwgt.org/Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/2ba9f875-66d9-414d-a426-5a012b443475.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/0a88351a-e628-4b1f-99eb-3a729518af0a.svg#0a88351a-e628-4b1f-99eb-3a729518af0a") format("svg");
+src:url("Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix");
+src:url("Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix") format("eot"),url("Fonts/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff"),url("Fonts/2ba9f875-66d9-414d-a426-5a012b443475.ttf") format("truetype"),url("Fonts/0a88351a-e628-4b1f-99eb-3a729518af0a.svg#0a88351a-e628-4b1f-99eb-3a729518af0a") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-65MediumObl";
-src:url("http://fonts.uwgt.org/Fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/e0af2f49-a399-482b-a54e-d745e268ec80.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/6803d3dd-2107-45fc-ac8a-a4fa13771547.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8.svg#1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8") format("svg");
+src:url("Fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix");
+src:url("Fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix") format("eot"),url("Fonts/e0af2f49-a399-482b-a54e-d745e268ec80.woff") format("woff"),url("Fonts/6803d3dd-2107-45fc-ac8a-a4fa13771547.ttf") format("truetype"),url("Fonts/1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8.svg#1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8") format("svg");
 }
 @font-face{
 font-family:"Avenir LT W01 95 Black";
-src:url("http://fonts.uwgt.org/Fonts/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/c33278bc-988e-440b-b4be-6acc095e6044.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/7bdad4a5-289b-42f9-b6fa-c5883b9e9f23.svg#7bdad4a5-289b-42f9-b6fa-c5883b9e9f23") format("svg");
+src:url("Fonts/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
+src:url("Fonts/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix") format("eot"),url("Fonts/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff"),url("Fonts/c33278bc-988e-440b-b4be-6acc095e6044.ttf") format("truetype"),url("Fonts/7bdad4a5-289b-42f9-b6fa-c5883b9e9f23.svg#7bdad4a5-289b-42f9-b6fa-c5883b9e9f23") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-95BlackObli";
-src:url("http://fonts.uwgt.org/Fonts/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/230d6b14-6d44-4dd5-a6ae-a4287936e51e.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/9bce4920-94e2-4e4d-bd34-818801dd3eb3.svg#9bce4920-94e2-4e4d-bd34-818801dd3eb3") format("svg");
+src:url("Fonts/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix");
+src:url("Fonts/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix") format("eot"),url("Fonts/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff") format("woff"),url("Fonts/230d6b14-6d44-4dd5-a6ae-a4287936e51e.ttf") format("truetype"),url("Fonts/9bce4920-94e2-4e4d-bd34-818801dd3eb3.svg#9bce4920-94e2-4e4d-bd34-818801dd3eb3") format("svg");
 }
 @font-face{
 font-family:"Avenir LT W01 35 Light";
-src:url("http://fonts.uwgt.org/Fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/3e419b5b-c789-488d-84cf-a64009cc308e.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/ca038835-1be3-4dc5-ba25-be1df6121499.svg#ca038835-1be3-4dc5-ba25-be1df6121499") format("svg");
+src:url("Fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix");
+src:url("Fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix") format("eot"),url("Fonts/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff") format("woff"),url("Fonts/3e419b5b-c789-488d-84cf-a64009cc308e.ttf") format("truetype"),url("Fonts/ca038835-1be3-4dc5-ba25-be1df6121499.svg#ca038835-1be3-4dc5-ba25-be1df6121499") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-35LightObli";
-src:url("http://fonts.uwgt.org/Fonts/6500273c-8e8b-48d2-b0c0-dcae293c0120.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/6500273c-8e8b-48d2-b0c0-dcae293c0120.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/60662abb-0ac3-46b2-930f-4719462489c9.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/9cf39ac2-87a5-4c4e-a604-7cece19d30bd.svg#9cf39ac2-87a5-4c4e-a604-7cece19d30bd") format("svg");
+src:url("Fonts/6500273c-8e8b-48d2-b0c0-dcae293c0120.eot?#iefix");
+src:url("Fonts/6500273c-8e8b-48d2-b0c0-dcae293c0120.eot?#iefix") format("eot"),url("Fonts/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff") format("woff"),url("Fonts/60662abb-0ac3-46b2-930f-4719462489c9.ttf") format("truetype"),url("Fonts/9cf39ac2-87a5-4c4e-a604-7cece19d30bd.svg#9cf39ac2-87a5-4c4e-a604-7cece19d30bd") format("svg");
 }
 @font-face{
 font-family:"Avenir LT W01 55 Roman";
-src:url("http://fonts.uwgt.org/Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
+src:url("Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix");
+src:url("Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("eot"),url("Fonts/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),url("Fonts/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),url("Fonts/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
 }
 @font-face{
 font-family:"Avenir LT W01 65 Medium";
-src:url("http://fonts.uwgt.org/Fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/aaf11848-aac2-4d09-9a9c-aac5ff7b8ff4.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/294099f3-8d00-4676-afc5-5e9d8d43ad69.svg#294099f3-8d00-4676-afc5-5e9d8d43ad69") format("svg");
+src:url("Fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix");
+src:url("Fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix") format("eot"),url("Fonts/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff") format("woff"),url("Fonts/aaf11848-aac2-4d09-9a9c-aac5ff7b8ff4.ttf") format("truetype"),url("Fonts/294099f3-8d00-4676-afc5-5e9d8d43ad69.svg#294099f3-8d00-4676-afc5-5e9d8d43ad69") format("svg");
 }
 @font-face{
 font-family:"AvenirLTW01-85HeavyObli";
-src:url("http://fonts.uwgt.org/Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix");
-src:url("http://fonts.uwgt.org/Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("eot"),url("http://fonts.uwgt.org/Fonts/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("http://fonts.uwgt.org/Fonts/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("http://fonts.uwgt.org/Fonts/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
+src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix");
+src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("eot"),url("Fonts/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("Fonts/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("Fonts/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
+}*/
+
+/*@font-face {
+  font-family: '/fonts/AvenirBook/ufontscomavenir45book';
+  src: url('./fonts/AvenirBook/ufontscomavenir45book.eot');
+  src: local('/fonts/AvenirBook/ufontscomavenir45book'), url('./fonts/AvenirBook/ufontscomavenir45book.woff') format('woff'), url('./fonts/AvenirBook/ufontscomavenir45book.ttf') format('truetype');
 }
+*/
+@font-face {
+  font-family: 'ufontscomavenir45book';
+  src: url('../fonts/AvenirBook/ufontscomavenir45book.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AvenirBook/ufontscomavenir45book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/AvenirBook/ufontscomavenir45book.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/AvenirBook/ufontscomavenir45book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AvenirBook/ufontscomavenir45book.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
 
 
 /*-----------END 1. Fonts-----------*/
@@ -126,7 +136,7 @@ body {
   color: #222222;
   padding: 0;
   margin: 0;
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1352,7 +1362,7 @@ meta.foundation-mq-topbar {
     color: white;
     padding: 12px 0 12px 0;
     padding-left: 15px;
-    font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 0.8125rem;
     font-weight: normal;
     background: #333333; }
@@ -1682,7 +1692,7 @@ button, .button {
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -2243,7 +2253,7 @@ div.switch {
     color: #eeeeee;
     font-weight: normal;
     font-size: 1rem;
-    font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif; }
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
   .pricing-table .price {
     background-color: #f6f6f6;
     padding: 0.9375rem 1.25rem;
@@ -2251,7 +2261,7 @@ div.switch {
     color: #333333;
     font-weight: normal;
     font-size: 2rem;
-    font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif; }
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
   .pricing-table .description {
     background-color: white;
     padding: 0.9375rem;
@@ -2550,7 +2560,7 @@ div.switch {
       padding-right: 2rem;
       padding-bottom: 1.0625rem;
       padding-left: 2rem;
-      font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
       font-size: 1rem; }
       .tabs dd > a:hover {
         background: #e1e1e1; }
@@ -2654,7 +2664,7 @@ ul.pagination {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: inside;
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif; }
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
   .side-nav li {
     margin: 0 0 0.4375rem 0;
     font-size: 0.875rem; }
@@ -2664,7 +2674,7 @@ ul.pagination {
     .side-nav li.active > a:first-child {
       color: #4d4d4d;
       font-weight: normal;
-      font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif; }
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
     .side-nav li.divider {
       border-top: 1px solid;
       height: 0;
@@ -2690,7 +2700,7 @@ ul.pagination {
       color: #222222;
       padding: 1rem;
       display: block;
-      font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
       font-size: 1rem; }
       .accordion dd > a:hover {
         background: #e3e3e3; }
@@ -2752,7 +2762,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #222222;
@@ -3448,7 +3458,7 @@ blockquote p {
     display: inline;
     margin-left: 1rem;
     margin-bottom: 0.625rem;
-    font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 0.875rem;
     color: #999999; }
@@ -3632,7 +3642,7 @@ blockquote p {
       right: auto; } }
 .label {
   font-weight: normal;
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -5321,8 +5331,6 @@ border-bottom: 1px solid #54585a;
 .BBFormRequiredFieldMarker, .DonationRequiredFieldMarker, .DonationCaptureRequiredFieldMarker {
   vertical-align:top;
   color:#da291c;
-  padding-top:2.6%;
-  padding-left:0;
 }
 td.DonationFieldCaption, td.DonationCaptureFieldCaption {
   font-weight: bold;
@@ -5387,13 +5395,17 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
   border:0;
 }
 
+
 /*Changes to donation form for small devices*/
-@media screen and /*!YUI Compressor*/ (max-width: 600px) {
-  
-  /* Force table to not be like tables anymore */
-  .DonationFormTable table, .DonationFormTable tbody, .DonationFormTable td, .DonationFormTable tr { 
-    display: block;
-  }  
+@media screen and  /*!YUI Compressor*/  (max-width: 600px) {
+  .DonationFormTable {
+    padding:0.5rem;
+    border:1px solid yellow;    
+    background:lime;
+  }
+  .DonationFormTable td {
+    display:block;
+  }
   td.DonationFieldCaption, td.DonationCaptureFieldCaption {
     font-weight: bold;
     width:100%;
@@ -5402,19 +5414,12 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
   td[id$="ParentControl523"] {
     width:100%;
   }
-  /*Line up credit card expiration date horizontally in two columns*/
   .sDonationCaptureFieldControlCell table td {
     vertical-align: top;
     width:50%;
     padding:0;
     display:inline-block;
-  } 
-  
- 
-
-
-
-
+  }  
 }
 /*END DONATION FORM*/
 
@@ -5437,11 +5442,12 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
   border: 0;
 }
 .pagecontainer {
-  font-family:'Avenir LT W01 55 Roman', Arial, "Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+  /*font-family: "Avenir LT W01 55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif; */
+  font-family: 'ufontscomavenir45book', Arial, Helvetica, sans-serif;
 }
-h1, h2, h3, h4 {
-  font-family:'Avenir LT W01 65 Medium', Arial, Helvetica, sans-serif;
-}
+/*h1, h2, h3, h4 {
+  font-family: "Avenir LT W01 55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif;  
+}*/
 h1.red-background {
   background-color:#da291c;
   color:#fff;
@@ -5776,7 +5782,7 @@ padding-top:-1rem;
 
 /*Responsiveness -
   These will make the sub menus collapsible when the screen width is small.*/
-  @media screen and /*!YUI Compressor*/ (max-width: 1024px) {
+  @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
 
       /* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
       ul.sm-simple{width:auto !important;}
@@ -6099,7 +6105,7 @@ div#headerbtns {
   border-right:1px dotted #d1d1d1;  
 }
 .bucketinner {
-  margin:0 1rem 0 1rem;  
+  margin:0 1rem 0 1rem;   
 }
 #contentbuckets h2.yellow-background, #contentbuckets h2.darkblue-background {
   background-color:#eaaa00;
@@ -6199,16 +6205,16 @@ div.copyright {
 .copyright p {
   font-size:0.8rem;
 }
-/*Format the slideshow*/
-#slideshow a {
-  border-bottom:0;
-}
 /*--END HOME PAGE--*/
 
 /*--LANDING PAGE--*/
 #leftnav {
   margin-bottom:1rem;
 }
+
+#leftnav ul li{display:none;}
+#leftnav ul li.selected, #leftnav ul li.selected ul > li{display:block;}
+
 .leftnav p {
   font-size:0.8rem;
   line-height:1.23rem;/*Cannot go below this value or in IE8 lines overlap*/
@@ -6380,7 +6386,7 @@ div.detailscontent {
 
 /*--MEDIA QUERY TO FIX SMALL THINGS THAT COULDN'T BE DONE EASILY OTHERWISE--*/
 
-@media screen and /*!YUI Compressor*/ (max-width: 600px) {
+@media screen and  /*!YUI Compressor*/ (max-width: 600px) {
 
   /*Remove left and right margin on content bucket headers on home page for mobile*/
   #contentbuckets h2.impactstory, #contentbuckets h2.trends {
@@ -6398,10 +6404,32 @@ div.detailscontent {
   div#copyright {
     text-align: left !important;
     color:#fff;   
-  } 
+  }
 
 }
 /*--END MEDIA QUERY TO FIX SMALL THINGS--*/
+
+/*--ORBIT STYLES --*/
+/* Display only the first image before js "kicks-in"*/
+#slideshow ul li{display: none;}
+#slideshow ul li:first-child{display: block;}
+/* Reset image display property after js "kicks-in"*/
+#slideshow .orbit-container ul li{display: block;}
+/* Desktop */
+.orbit-container{
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+/* Tablet */
+@media (max-width: 768px) {
+	
+}
+/* Mobile */
+@media (max-width: 480px) {
+	
+}
+/*--END ORBIT STYLES --*/
 
 /*-----------END 4. UWT styles-----------*/
 
