@@ -6350,8 +6350,12 @@ div.landingcontent {
 }
 .sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sidebar .sm-simple a.highlighted {
     background:none;
-    color:#da291c;
-  }
+ }
+.sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sm-simple a.highlighted:last-child {
+	color:#da291c;
+}
+
+  
 /*Make the active menu item turn red (doesn't apply on level-one links)*/
 .sidebar .sm-simple li ul li a.selected {
   color:#da291c;
