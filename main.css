@@ -6414,6 +6414,9 @@ div.detailscontent {
 /*--END MEDIA QUERY TO FIX SMALL THINGS--*/
 
 /*--ORBIT STYLES --*/
+/* Hide the Orbit slideshow guide unless it's admin view */
+#orbitGuide{ display: none;}
+form[action*="pagedesign"] #orbitGuide{display: block;}
 /* Display only the first image before js "kicks-in"*/
 #slideshow ul li{display: none;}
 #slideshow ul li:first-child{display: block;}
@@ -6452,5 +6455,6 @@ div.detailscontent {
 #tinymce .show-for-large-up { 
   display: block !important; 
 }
+#tinymce  #orbitGuide{display: block;}
 
 /*-----------END 5. TinyMCE specific fixes-----------*/
