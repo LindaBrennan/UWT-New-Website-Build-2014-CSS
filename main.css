@@ -5687,19 +5687,23 @@ padding-top:-1rem;
 /* Menu items
 ===================*/
   .sm-simple a {
-    padding:0.4rem 0.8rem;
+    padding:0.5rem 0.5rem;
     color:#000;
-    font-size:1rem;
-    line-height:1.5rem;    
+    font-size:0.9rem;     
     text-decoration:none;
+    font-weight:bold;
   }
   .sm-simple a:hover, .sm-simple a:focus, .sm-simple a:active,
   .sm-simple a.highlighted {
     background:#eee;
     color:#000;
-  }
+  }  
   .sm-simple a.has-submenu {
     padding-right:2rem;
+  }
+  /*Reduce padding to right of top-level menu items only*/
+  .sm-simple > li > a.has-submenu {
+    padding-right:0.8rem;    
   }
   .sm-simple ul a.has-submenu {
     padding-right:1rem;
@@ -6211,10 +6215,6 @@ div.copyright {
 #leftnav {
   margin-bottom:1rem;
 }
-
-#leftnav ul li{display:none;}
-#leftnav ul li.selected, #leftnav ul li.selected ul > li{display:block;}
-
 .leftnav p {
   font-size:0.8rem;
   line-height:1.23rem;/*Cannot go below this value or in IE8 lines overlap*/
@@ -6293,9 +6293,16 @@ div.landingcontent {
 /*--Sidebar menu--*/
 /*Uses the small menu code - see: http://www.smartmenus.org/docs/*/
 
-.sidebar ul.main-menu {
-  width:auto !important;
+/*Hide all sidenav items except the parent and children where there is a selected item within the parent anywhere*/
+#leftnav ul li {
+  display:none;
 }
+#leftnav ul li.selected, #leftnav ul li.selected ul > li {
+  display:block;
+}
+/*.sidebar ul.main-menu {
+  width:auto !important;
+}*/
 .sidebar ul.main-menu ul {
   display:none;
   position:static !important;
@@ -6354,7 +6361,6 @@ div.landingcontent {
 .sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sm-simple a.highlighted:last-child {
 	color:#da291c;
 }
-
   
 /*Make the active menu item turn red (doesn't apply on level-one links)*/
 .sidebar .sm-simple li ul li a.selected {
@@ -6373,10 +6379,10 @@ div.landingcontent {
   border-left: 0rem solid transparent;
 }
 .sidebar .sm-simple ul ul a {
-  border-left: 1.5rem solid transparent;
+  border-left: 1.0rem solid transparent;
 }
 .sidebar .sm-simple ul ul ul a {
-  border-left: 2.0rem solid transparent;
+  border-left: 1.5rem solid transparent;
 }
 /*--END LANDING PAGE--*/
 
