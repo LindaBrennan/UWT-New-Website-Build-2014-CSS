@@ -1,4 +1,4 @@
-/*--------Table of Contents--------
+--------Table of Contents--------
 
 1. Fonts
 2. Foundation media queries and styles
@@ -10,6 +10,7 @@
       HOME PAGE
       LANDING PAGE
       DETAILS PAGE
+      DONATION PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
       ORBIT SLIDESHOW
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
@@ -5234,6 +5235,7 @@ border: 0;
   border-collapse: collapse;
   border:0;
 }
+/*Section headings*/
 .DonationListingHeading span, .DonationCaptureListingHeading span {
   color:#da291c;
   font-weight:bold;
@@ -5256,12 +5258,12 @@ border-bottom: 1px solid #54585a;
   vertical-align:top;
   color:#da291c;
 }
+/*Reduce width of field label column*/
 td.DonationFieldCaption, td.DonationCaptureFieldCaption {
   font-weight: bold;
   width:28%;
-  vertical-align:top;
-  padding-top:1rem;
 }
+/*Align all fields and labels to top*/
 .DonationFieldControlCell td, 
 td.taLeft, 
 td.DonationCaptureFieldControlCell, 
@@ -5270,6 +5272,22 @@ td.DonationButtonCell,
 td.DonationFieldCaption {
   vertical-align:top;
 }
+/*Match the width of the donation amount field to the other fields*/
+.DonationFieldControlCell table {
+  width:78%;
+  position:relative;
+  left:-0.2rem;
+}
+.DonationFieldControlCell table td {
+  padding:0;
+}
+.DonationFieldControlCell table td:first-child {
+  padding-top:0.5rem;
+}
+.DonationFieldControlCell table td:nth-child(4) {
+  padding-left:0.5rem;
+}
+
 /*Format the donation button*/
 td.DonationButtonCell {
   text-align:center;
@@ -5284,20 +5302,22 @@ input.DonationSubmitButton {
   -webkit-border-radius: 0.5rem; 
   -moz-border-radius: 0.5rem; 
   border-radius:  0.5rem;
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;/*Needed for PIE to work*/
   behavior: url(pie/PIE.htc);
   margin-left:auto;
   margin-right:auto;
 }
+/*Reduce width of selects*/
 td[id$="ParentControl523"] {
   width:40%;
 }
+/*Add rounded corners to fields*/
 input[type="text"], select, textarea { 
   -webkit-border-radius: 0.4rem; 
   -moz-border-radius: 0.4rem; 
   border-radius: 0.4rem;
 }
-/*Style the cerdit card expiration select fields*/
+/*Style the credit card expiration select fields*/
 .sDonationCaptureFieldControlCell table {
   width:100%;
   margin:0;
@@ -5306,10 +5326,10 @@ input[type="text"], select, textarea {
 .sDonationCaptureFieldControlCell table td {
   vertical-align: top;
   padding:0;
-  width:50%;
+  width:53%;
 }
 select[id$="DonationCapture1_cboMonth"] {
-  width:91%;
+  width:98%;
 }
 /*Hide the slash in the card expiration*/
 label[id$="DonationCapture1_lblTxtYear"] {
@@ -5321,11 +5341,9 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
 
 
 /*Changes to donation form for small devices*/
-@media screen and  /*!YUI Compressor*/  (max-width: 600px) {
+@media screen and  /*!YUI Compressor*/  (max-width: 550px) {
   .DonationFormTable {
     padding:0.5rem;
-    border:1px solid yellow;    
-    background:lime;
   }
   .DonationFormTable td {
     display:block;
@@ -5343,7 +5361,38 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
     width:50%;
     padding:0;
     display:inline-block;
-  }  
+    padding:0;
+    width:100%;
+  }    
+  /* hide default required fieldmarker */
+  tr.hasRequired td.DonationRequiredFieldMarker, tr.hasRequired td.DonationCaptureRequiredFieldMarker {
+    display: none;
+  }
+  tr.hasRequired span.DonationRequiredFieldMarker {
+    display: none;
+  }
+  /* add required fieldmarker to label */
+  tr.hasRequired td:first-child:before{
+    content:'*';
+    display: inline;
+    color:#da291c;
+  }
+  /*Increase width of credit card fields*/
+  select[id$="DonationCapture1_cboMonth"] {
+  width:100%;
+  }
+  select[id$="DonationCapture1_cboYear"] {
+    width:100%;
+  }
+  /*Increase width of donation field and move it fartehr to right*/
+  .DonationFieldControlCell table {
+  width:98%;
+  position:relative;
+  left:0.4rem;
+}
+  
+}
+
 }
 /*END DONATION FORM*/
 
@@ -5354,20 +5403,19 @@ table[id$="_tblAmount"], table[id$="_tblAmount"] table {
 
 /*--CROSS-SITE STYLES TO OVERWRITE FOUNDATION STYLES--*/
 
-/*Screen-reader-only style taken from Bootstrap - used for Skip-to-Content link*/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+/*Skip to content link*/
+.skip  {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
+
 .pagecontainer {
-  font-family: "Avenir LT W01 55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif; */
-  /*font-family: "Avenir LT W01 55 Roman", serif; */
+  font-family: "Avenir LT W01 55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif; 
+   /*font-family: "Avenir LT W01 55 Roman", serif; */
   }
 h1, h2, h3, h4 {
  /* font-family: "Avenir LT W01 55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif;  */
@@ -6393,4 +6441,4 @@ form[action*="pagedesign"] #orbitGuide{display: block;}
 }
 #tinymce  #orbitGuide{display: block;}
 
-/*-----------END 5. TinyMCE specific fixes-----------*/
+/*-----------END 5. TinyMCE specific fixes-----------
