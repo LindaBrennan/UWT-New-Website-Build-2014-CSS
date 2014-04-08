@@ -19,7 +19,29 @@
 
 /*-----------1. Fonts-----------*/
 /*This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com*/
+@font-face{
+font-family:"Avenir LT W01 85 Heavy";
+src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot");
+src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("embedded-opentype"),url("Fonts/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("Fonts/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("Fonts/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
+}
 
+@font-face{
+font-family:"AvenirLTW01-55Oblique";
+src:url("Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot");
+src:url("Fonts/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix") format("embedded-opentype"),url("Fonts/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff"),url("Fonts/2ba9f875-66d9-414d-a426-5a012b443475.ttf") format("truetype"),url("Fonts/0a88351a-e628-4b1f-99eb-3a729518af0a.svg#0a88351a-e628-4b1f-99eb-3a729518af0a") format("svg");
+}
+
+@font-face{
+font-family:"Avenir LT W01 55 Roman";
+src:url("Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot");
+src:url("Fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("embedded-opentype"),url("Fonts/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),url("Fonts/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),url("Fonts/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
+}
+
+@font-face{
+font-family:"AvenirLTW01-85HeavyObli";
+src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot");
+src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("embedded-opentype"),url("Fonts/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("Fonts/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("Fonts/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
+}
 
 /*-----------END 1. Fonts-----------*/
 
@@ -5235,6 +5257,18 @@ border: 0;
   border-collapse: collapse;
   border:0;
 }
+/*Reduce padding between rows*/
+.DonationFormTable td,.DonationFormTable td table td {
+  padding-top:0.5rem;
+  padding-bottom:0;
+}
+.DonationFormTable input, .DonationFormTable textarea, .DonationFormTable select {
+  margin-bottom:0;
+}
+.sDonationCaptureFieldControlCell table td {
+  padding-top:0;
+  margin-top:0;
+}
 /*Section headings*/
 .DonationListingHeading span, .DonationCaptureListingHeading span {
   color:#da291c;
@@ -5245,14 +5279,20 @@ border: 0;
 }
 /*Draw a line under the section headings*/
 .DonationListingHeading span:after, .DonationCaptureListingHeading span:after {
-content: '\A ';
-white-space: pre;
-position: absolute;
-left:0rem;
-width:100%;
-bottom:-20%;
-border-bottom: 1px solid #54585a;
+  content: '\A ';
+  white-space: pre;
+  position: absolute;
+  left:0rem;
+  width:100%;
+  bottom:-20%;
+  border-bottom: 1px solid #54585a;
 }
+/*Increase space under headings*/
+.DonationFormTable tbody:before {
+  content:"\a";
+  white-space: pre;
+}
+
 /*Mandatory field indicator*/
 .BBFormRequiredFieldMarker, .DonationRequiredFieldMarker, .DonationCaptureRequiredFieldMarker {
   vertical-align:top;
