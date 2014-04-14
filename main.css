@@ -5259,6 +5259,9 @@ border: 0;
   border:0;
   width:100%;
 }
+.DonationFormTable table {
+  margin-bottom: 0;
+}
 /*Reduce padding between rows*/
 .DonationFormTable td,.DonationFormTable td table td {
   padding-top:0.5rem;
@@ -5267,16 +5270,12 @@ border: 0;
 .DonationFormTable input, .DonationFormTable textarea, .DonationFormTable select {
   margin-bottom:0;
 }
-.sDonationCaptureFieldControlCell table td {
-  padding-top:0;
-  margin-top:0;
-}
 /*Section headings*/
 .DonationFormTable .DonationListingHeading, .DonationFormTable .DonationCaptureListingHeading {
     background-color: #ffffff;
     text-align: left;
 }
-.DonationListingHeading span, .DonationCaptureListingHeading span, .BBListingHeading span {
+.DonationFormTable .DonationListingHeading span, .DonationFormTable .DonationCaptureListingHeading span, .DonationFormTable .BBListingHeading span {
   color:#da291c;
   font-weight:bold;
   font-size:1.3rem;
@@ -5286,9 +5285,8 @@ border: 0;
 .DonationFormTable .BBListingHeading, .DonationFormTable .BBFormTable {
     border: 0pt;
 }
-
 /*Draw a line under the section headings*/
-.DonationFormTable .DonationListingHeading span:after, .DonationCaptureListingHeading span:after, .BBListingHeading span:after {
+.DonationFormTable .DonationListingHeading span:after, .DonationFormTable .DonationCaptureListingHeading span:after, .DonationFormTable .BBListingHeading span:after {
   content: '\A ';
   white-space: pre;
   position: absolute;
@@ -5302,43 +5300,147 @@ border: 0;
   content:"\a";
   white-space: pre;
 }
-
 /*Mandatory field indicator*/
-.BBFormRequiredFieldMarker, .DonationRequiredFieldMarker, .DonationCaptureRequiredFieldMarker {
+.DonationFormTable .BBFormRequiredFieldMarker, .DonationFormTable .DonationRequiredFieldMarker, .DonationFormTable .DonationCaptureRequiredFieldMarker {
   vertical-align:top;
   color:#da291c;
 }
-
 /*Align all fields and labels to top*/
-.DonationFieldControlCell td, 
-td.taLeft, 
-td.DonationCaptureFieldControlCell, 
-td.DonationCaptureRequiredFieldMarker, 
-td.DonationButtonCell, 
-td.DonationFieldCaption {
+.DonationFormTable .DonationFieldControlCell td, 
+.DonationFormTable td.taLeft, 
+.DonationFormTable td.DonationCaptureFieldControlCell, 
+.DonationFormTable td.DonationCaptureRequiredFieldMarker, 
+.DonationFormTable td.DonationButtonCell, 
+.DonationFormTable td.DonationFieldCaption {
   vertical-align:top;
 }
 /*Match the width of the donation amount field to the other fields*/
-.DonationFieldControlCell table {
-  width:78%;
+.DonationFormTable .DonationFieldControlCell table {
+  width:67%;
   position:relative;
   left:-0.2rem;
 }
-.DonationFieldControlCell table td {
-  padding:0;
+.DonationFormTable .DonationFieldControlCell table td {
+  padding:0;  
 }
-.DonationFieldControlCell table td:first-child {
-  padding-top:0.5rem;
-}
-.DonationFieldControlCell table td:nth-child(4) {
+.DonationFormTable .DonationFieldControlCell table td:nth-child(4) {
   padding-left:0.5rem;
 }
-
-/*Format the donation button*/
-td.DonationButtonCell {
-  text-align:center;
+.DonationFormTable label[id$="lblAmountCaption"] {
+  margin-top:0.5rem;
 }
-input.DonationSubmitButton {
+.DonationFormTable select.DonationSelectList {
+  width:38%;
+}
+.DonationFormTable select[id$="cboTitle"] {
+  width:43%;
+}
+.DonationFormTable select.DonationCaptureSelectList {
+  width:43%;
+}
+.DonationFormTable textarea.DonationCaptureTextArea {
+  width:100%;  
+}
+/*Reduce width of selects*/
+.DonationFormTable td[id$="ParentControl523"] {
+  width:40%;
+}
+/*Add rounded corners to fields*/
+.DonationFormTable input[type="text"], select, textarea { 
+  -webkit-border-radius: 0.4rem; 
+  -moz-border-radius: 0.4rem; 
+  border-radius: 0.4rem;
+}
+/*Style the credit card expiration select fields*/
+.DonationFormTable .sDonationCaptureFieldControlCell table {
+  width:44%;
+  border:0;
+}
+.DonationFormTable .sDonationCaptureFieldControlCell table td {
+  vertical-align: top;
+  padding:0;
+  margin:0;
+  width:50%;
+}
+.DonationFormTable .sDonationCaptureFieldControlCell table td select {
+  width:100%;
+}
+/*Hide the slash in the card expiration*/
+.DonationFormTable label[id$="DonationCapture1_lblTxtYear"] {
+  display: none;
+}
+.DonationFormTable table[id$="_tblAmount"], table[id$="_tblAmount"] table {
+  border:0;
+}
+.DonationFormTable input[id$="DonationCapture1_txtCSC"] {
+  width:43%;
+}
+.DonationFormTable select.LoginFormSelectList, .BBFormGroup  select.LoginFormSelectList {
+    width: 23%;
+}
+/*BBIS-specific Donation form style overrides*/
+td.grayBox p {
+  margin:0;
+  color:#333;  
+  line-height:14px;
+  background:#eee;
+  border:1px solid #e1e1e1;
+  padding:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  -o-border-radius:5px;
+  border-radius:5px;
+}
+/*Long text for forms*/
+.donationFormLongText { 
+  display:none; 
+}
+*.attributeBlock p { 
+  font-size:1.1em; font-weight:normal; 
+}
+label[id$="523"] p { 
+  font-size:1em;margin:0; 
+}
+*.attributeBlock {
+padding:0px;
+margin-top:20px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+border:1px solid #ddd;
+border:0;
+}
+*.attributeBlock div {
+text-align:left;
+}
+*.attributeBlock [id*="lblLgnCtl"] { 
+  padding-bottom:0; 
+}
+*.attributeBlock *.DonationCaptureRequiredFieldMarker { 
+  display:none; 
+}
+/*Remove grey backgrounds on questions*/
+.attributeBlock .BBFieldCaption, .DonationFormTable .BBFieldCaption, .DonationFormTable .DonationFieldCaption {
+  background: none;
+  white-space: normal;
+}
+.DonationFormTable tbody:before {
+  content: none;
+}
+.attributeBlock p {
+    font-size: 1.0em;
+}
+input.BBFormTextbox {
+  border-radius:5px;
+}
+.BBFormGroup {
+  padding-left:0.7rem;
+}
+.formSubmit {
+  border:0;
+}
+.DonationButtonCell input.DonationSubmitButton {
   background-color: #64a70b;
   color:#fff;
   text-transform:uppercase;
@@ -5348,98 +5450,70 @@ input.DonationSubmitButton {
   -webkit-border-radius: 0.5rem; 
   -moz-border-radius: 0.5rem; 
   border-radius:  0.5rem;
-  position:relative;/*Needed for PIE to work*/
-  behavior: url(pie/PIE.htc);
-  margin-left:auto;
-  margin-right:auto;
+  position:relative;
+  behavior: url(pie/PIE.htc); 
 }
-/*Reduce width of selects*/
-td[id$="ParentControl523"] {
-  width:40%;
+.DonationValidationSummary {
+  border:1px solid #dddddd;
+  font-size:0.9rem;
+  padding:0.5rem;
 }
-/*Add rounded corners to fields*/
-input[type="text"], select, textarea { 
-  -webkit-border-radius: 0.4rem; 
-  -moz-border-radius: 0.4rem; 
-  border-radius: 0.4rem;
-}
-/*Style the credit card expiration select fields*/
-.sDonationCaptureFieldControlCell table {
-  width:100%;
-  margin:0;
-  border:0;
-}
-.sDonationCaptureFieldControlCell table td {
-  vertical-align: top;
-  padding:0;
-  width:53%;
-}
-select[id$="DonationCapture1_cboMonth"] {
-  width:98%;
-}
-/*Hide the slash in the card expiration*/
-label[id$="DonationCapture1_lblTxtYear"] {
-  display: none;
-}
-table[id$="_tblAmount"], table[id$="_tblAmount"] table {
-  border:0;
-}
+.DonationValidationSummary ul li {
+   font-size:0.9rem; 
+ }
+/*Hide the blue question mark image*/
+/*.DonationCaptureFieldControlCell a img {
+  display:none;
+}*/
 
 
 /*Changes to donation form for small devices*/
 @media screen and  /*!YUI Compressor*/  (max-width: 550px) {
+  
   .DonationFormTable {
     padding:0.5rem;
   }
   .DonationFormTable td {
     display:block;
   }
-  td.DonationFieldCaption, td.DonationCaptureFieldCaption {
+  .DonationFormTable td.DonationFieldCaption, .DonationFormTable td.DonationCaptureFieldCaption {
     font-weight: bold;
     width:100%;
     vertical-align:top;
+    background: none repeat scroll 0 0 #ffffff !important;
   }
-  td[id$="ParentControl523"] {
+  .DonationFormTable td[id$="ParentControl523"] {
     width:100%;
-  }
-  .sDonationCaptureFieldControlCell table td {
-    vertical-align: top;
-    width:50%;
-    padding:0;
-    display:inline-block;
-    padding:0;
-    width:100%;
-  }    
+  } 
   /* hide default required fieldmarker */
-  tr.hasRequired td.DonationRequiredFieldMarker, tr.hasRequired td.DonationCaptureRequiredFieldMarker {
+  .DonationFormTable tr.hasRequired td.DonationRequiredFieldMarker, .DonationFormTable tr.hasRequired td.DonationCaptureRequiredFieldMarker {
     display: none;
   }
-  tr.hasRequired span.DonationRequiredFieldMarker {
+  .DonationFormTable tr.hasRequired span.DonationRequiredFieldMarker {
     display: none;
   }
   /* add required fieldmarker to label */
-  tr.hasRequired td:first-child:before{
+  .DonationFormTable tr.hasRequired td:first-child:before{
     content:'*';
     display: inline;
     color:#da291c;
   }
   /*Increase width of credit card fields*/
-  select[id$="DonationCapture1_cboMonth"] {
+  /*.DonationFormTable select[id$="DonationCapture1_cboMonth"] {
   width:100%;
-  }
-  select[id$="DonationCapture1_cboYear"] {
+  }*/
+  .DonationFormTable select[id$="DonationCapture1_cboYear"] {
     width:100%;
   }
   /*Increase width of donation field and move it fartehr to right*/
-  .DonationFieldControlCell table {
+  .DonationFormTable .DonationFieldControlCell table {
   width:98%;
   position:relative;
   left:0.4rem;
-}
-  
-}
+  }
 
 }
+
 /*END DONATION FORM*/
 
 /*-----------END 3. BBIS Part styles-----------*/
