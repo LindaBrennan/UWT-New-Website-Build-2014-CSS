@@ -5212,9 +5212,9 @@ th.hide-for-touch {
   margin:0;
 }
 .QuickSearchFormTable input.QuickSearchTextbox {
-  margin-top:0.2rem;
+  margin-top:0.2rem;  
 }
-.QuickSearchContainer {
+/*.QuickSearchContainer {
   background:#fff; 
   padding:0.1rem; 
   padding-top:0.2rem;  
@@ -5226,8 +5226,15 @@ th.hide-for-touch {
   border-radius:5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;   
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;
   behavior: url(pie/PIE.htc);
+}*/
+
+/*Edits to Quick Search part to round the corners, add padding*/
+.QuickSearchFormTable {
+  float:right;
+  padding:0.2rem;
+  border-radius:5px;
 }
 .QuickSearchContainer table.QuickSearchFormTable {
 margin-bottom: 0;
@@ -5249,6 +5256,10 @@ border: 0;
 .smallsearchcontainer table.QuickSearchFormTable {
 margin-bottom: 0;
 border: 0;
+}
+/*Remove extra padding in Utility row caused by BBIS adding <p> around content in divs*/
+#utility p, #utility table {
+  margin-bottom:0;
 }
 /*END QUICK SEARCH*/
 
@@ -5429,7 +5440,7 @@ text-align:left;
   content: none;
 }
 .attributeBlock p {
-    font-size: 1.0em;
+  font-size: 1.0em;
 }
 input.BBFormTextbox {
   border-radius:5px;
@@ -5461,14 +5472,9 @@ input.BBFormTextbox {
 .DonationValidationSummary ul li {
    font-size:0.9rem; 
  }
-/*Hide the blue question mark image*/
-/*.DonationCaptureFieldControlCell a img {
-  display:none;
-}*/
-
 
 /*Changes to donation form for small devices*/
-@media screen and  /*!YUI Compressor*/  (max-width: 550px) {
+@media screen and  /*!YUI Compressor*/  (max-width: 480px) {
   
   .DonationFormTable {
     padding:0.5rem;
@@ -5476,41 +5482,65 @@ input.BBFormTextbox {
   .DonationFormTable td {
     display:block;
   }
-  .DonationFormTable td.DonationFieldCaption, .DonationFormTable td.DonationCaptureFieldCaption {
-    font-weight: bold;
+  .DonationFormTable .BBFieldCaption, .DonationFormTable .DonationFieldCaption
+  {
+    text-align:left;
+  }
+  .DonationFormTable .BBFormSelectList, .DonationFormTable .LoginFormSelectList {
     width:100%;
-    vertical-align:top;
-    background: none repeat scroll 0 0 #ffffff !important;
+  }
+  /*Increase width of fields*/
+  .DonationFormTable select.DonationSelectList {
+  width:100%;
+  }
+  .DonationFormTable select[id$="cboTitle"] {
+    width:100%;
+  }
+  .DonationFormTable select.DonationCaptureSelectList {
+    width:100%;
   }
   .DonationFormTable td[id$="ParentControl523"] {
     width:100%;
-  } 
+  }
+  .DonationFormTable .sDonationCaptureFieldControlCell table {
+    width:100%;
+  }
+  .DonationFormTable .sDonationCaptureFieldControlCell table td {
+    width:100%;
+  }
+  .DonationFormTable input[id$="DonationCapture1_txtCSC"] {
+    width:100%;
+  }
+  .DonationFormTable select.LoginFormSelectList, .BBFormGroup  select.LoginFormSelectList {
+      width: 100%;
+  }
+  .DonationFormTable .DonationFieldControlCell table {
+  width:100%;
+  position:relative;
+  left:0rem;
+  }
+  /*Add vertical space between the credit card fields*/
+  .DonationFormTable select[id$="cboMonth"] {
+    margin-bottom:0.5rem;
+  }
+    /*Add vertical space above the Billing Info header*/
+  .DonationFormTable select[id$="ddlSources"] {
+    margin-bottom:0.5rem;
+  }
   /* hide default required fieldmarker */
-  .DonationFormTable tr.hasRequired td.DonationRequiredFieldMarker, .DonationFormTable tr.hasRequired td.DonationCaptureRequiredFieldMarker {
+  tr.hasRequired td.DonationRequiredFieldMarker, tr.hasRequired td.DonationCaptureRequiredFieldMarker {
     display: none;
   }
-  .DonationFormTable tr.hasRequired span.DonationRequiredFieldMarker {
+  tr.hasRequired span.DonationRequiredFieldMarker {
     display: none;
   }
   /* add required fieldmarker to label */
-  .DonationFormTable tr.hasRequired td:first-child:before{
+  tr.hasRequired td:first-child:before{
     content:'*';
     display: inline;
-    color:#da291c;
+    color:lime;
   }
-  /*Increase width of credit card fields*/
-  /*.DonationFormTable select[id$="DonationCapture1_cboMonth"] {
-  width:100%;
-  }*/
-  .DonationFormTable select[id$="DonationCapture1_cboYear"] {
-    width:100%;
-  }
-  /*Increase width of donation field and move it fartehr to right*/
-  .DonationFormTable .DonationFieldControlCell table {
-  width:98%;
-  position:relative;
-  left:0.4rem;
-  }
+
 
 }
 
@@ -5531,6 +5561,9 @@ input.BBFormTextbox {
   width:1px;
   height:1px;
   overflow:hidden;
+}
+.nopad {
+  padding:0;
 }
 
 .pagecontainer {
@@ -6067,6 +6100,10 @@ div:hover.smallemail {
 div:active.smallemail {
   background:#333333;
  /*box-shadow: #fff 0px 2px 3px;*/
+}
+/*Allow long menu items to wrap onto more than one line*/
+.sm-simple ul.sm ul.sm-nowrap > li > a {
+    white-space: normal;
 }
 /*--END MAIN NAV--*/
 
