@@ -3560,7 +3560,7 @@ blockquote p {
   top: 0;
   left: 0; }
 
-/* Styles for screens that are atleast 768px; */
+/* Styles for screens that are at least 768px; */
 @media only screen and /*!YUI Compressor*/ (min-width: 40.063em) {
   .joyride-tip-guide {
     width: 300px;
@@ -5553,14 +5553,22 @@ input.BBFormTextbox {
 
 /*--CROSS-SITE STYLES TO OVERWRITE FOUNDATION STYLES--*/
 
-/*Skip to content link*/
-.skip  {
+/*Skip to content link for screenreader users and keyboard users*/
+.skip{
   position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+   /* Adjust top attribute value to meet your needs */
+  top: -100%;
+  /* CSS3 annimation out of view*/
+  -webkit-transition: top 1s ease-out, background 1s linear;
+  transition: top 1s ease-out, background 1s linear;
+}
+.skip:focus{
+  top:0;
+  text-indent:0;
+  /* CSS3 annimation into view */
+  -webkit-transition: top .1s ease-in, background .5s linear;
+  transition: top .1s ease-in, background .5s linear;
+  background:#fff;
 }
 .nopad {
   padding:0;
@@ -5910,9 +5918,10 @@ padding-top:-1rem;
     left: 17%;   
   }
 
+
 /*Responsiveness -
   These will make the sub menus collapsible when the screen width is small.*/
-  @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
+  @media screen and  /*!YUI Compressor*/ (max-width: 767px) {
 
       /* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
       ul.sm-simple{width:auto !important;}
@@ -6101,10 +6110,6 @@ div:active.smallemail {
   background:#333333;
  /*box-shadow: #fff 0px 2px 3px;*/
 }
-/*Allow long menu items to wrap onto more than one line*/
-.sm-simple ul.sm ul.sm-nowrap > li > a {
-    white-space: normal;
-}
 /*--END MAIN NAV--*/
 
 
@@ -6187,38 +6192,39 @@ div#headerbtns {
   text-align: center; 
   width: 8.5rem;
   height:2.5rem;
-  padding-top:0.5rem;
+  padding-top:0.6rem;
   border-radius: 5px;
   background: #54585a;
   position: relative;
   /*box-shadow: #666 0px 2px 3px;*/
   text-transform: uppercase;
-  font-weight: bold;
-  font-size:0.85rem;
+  font-weight: bold;  
   position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
   behavior: url(pie/PIE.htc);
 }
 .joinemailbtn a {
   color:#fff;
+  font-size:0.9rem;
 }
 .donatebtn {  
   text-align: center; 
   width: 8.5rem;
   height:2.5rem;
-  padding-top:0.5rem;
+  padding-top:0.6rem;
   border-radius: 5px;
   background: #da291c;
   position: relative;
   /*box-shadow: #666 0px 2px 3px;*/
   text-transform: uppercase;
   font-weight: bold;
-  font-size:0.85rem;
+  font-size:0.8rem;
   margin-left:1rem;
   position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
   behavior: url(pie/PIE.htc);
 }
 #headerbtns .donatebtn a {
   color:#fff;
+  font-size:0.9rem;
 }
 .logo, .logomedium {
   text-align:center;
@@ -6495,8 +6501,7 @@ div.landingcontent {
  }
 .sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sm-simple a.highlighted:last-child {
 	color:#da291c;
-}
-  
+}  
 /*Make the active menu item turn red (doesn't apply on level-one links)*/
 .sidebar .sm-simple li ul li a.selected {
   color:#da291c;
@@ -6519,6 +6524,11 @@ div.landingcontent {
 .sidebar .sm-simple ul ul ul a {
   border-left: 1.5rem solid transparent;
 }
+/*Allow long menu items to wrap onto more than one line*/
+ul.sm ul.sm-nowrap > li > a {
+    white-space: normal;
+}
+
 /*--END LANDING PAGE--*/
 
 /*--DETAILS PAGE--*/
