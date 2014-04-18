@@ -5204,7 +5204,7 @@ th.hide-for-touch {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;  
   border-radius:5px;
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;
   behavior: url(pie/PIE.htc);
 }
 .QuickSearchFormTable td {
@@ -5212,9 +5212,9 @@ th.hide-for-touch {
   margin:0;
 }
 .QuickSearchFormTable input.QuickSearchTextbox {
-  margin-top:0.2rem;  
+  margin-top:0.2rem;
 }
-/*.QuickSearchContainer {
+.QuickSearchContainer {
   background:#fff; 
   padding:0.1rem; 
   padding-top:0.2rem;  
@@ -5228,13 +5228,6 @@ th.hide-for-touch {
   -moz-border-radius: 5px;   
   position:relative;
   behavior: url(pie/PIE.htc);
-}*/
-
-/*Edits to Quick Search part to round the corners, add padding*/
-.QuickSearchFormTable {
-  float:right;
-  padding:0.2rem;
-  border-radius:5px;
 }
 .QuickSearchContainer table.QuickSearchFormTable {
 margin-bottom: 0;
@@ -5256,10 +5249,6 @@ border: 0;
 .smallsearchcontainer table.QuickSearchFormTable {
 margin-bottom: 0;
 border: 0;
-}
-/*Remove extra padding in Utility row caused by BBIS adding <p> around content in divs*/
-#utility p, #utility table {
-  margin-bottom:0;
 }
 /*END QUICK SEARCH*/
 
@@ -5570,8 +5559,9 @@ input.BBFormTextbox {
   transition: top .1s ease-in, background .5s linear;
   background:#fff;
 }
-.nopad {
+#utility p.nopad {
   padding:0;
+  margin-bottom: 0rem;
 }
 
 .pagecontainer {
@@ -5693,7 +5683,7 @@ a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow {
   font-weight:bolder;
   text-transform: uppercase;
   color:#000;
-  background-image: url('../img/chevron-blue.png');
+  background-image: url('image/new-website/chevron-blue.png');
   background-repeat:no-repeat;
   background-position:right;
   padding:0.5rem 2.7rem 0.5rem 0;
@@ -5701,23 +5691,17 @@ a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow {
   margin-top:0.1rem;
 }
 a.readmore-darkblue {
-  background-image: url('../img/chevron-darkblue.png');
+  background-image: url('image/new-website/chevron-darkblue.png');
 }
 a.readmore-red {
-  background-image: url('../img/chevron-red.png');
+  background-image: url('image/new-website/chevron-red.png');
 }
 a.readmore-yellow {
-  background-image: url('../img/chevron-yellow.png');
+  background-image: url('image/new-website/chevron-yellow.png');
 }
 a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue {
   color:#da291c;
   text-decoration:underline;
-}
-hr.divider {
-  background-color:#fff;
-  border:#d1d1d1 1px dotted;
-  border-style: none none dotted;
-  color:#fff;
 }
 img.piechart {   
   display: block;
@@ -5778,8 +5762,6 @@ margin: 0;
 display:block;
 padding-top:-1rem;
 }
-
-
 /*--END CROSS-SITE STYLES--*/
 
 
@@ -5921,7 +5903,7 @@ padding-top:-1rem;
 
 /*Responsiveness -
   These will make the sub menus collapsible when the screen width is small.*/
-  @media screen and  /*!YUI Compressor*/ (max-width: 767px) {
+  @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
 
       /* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
       ul.sm-simple{width:auto !important;}
@@ -6162,23 +6144,45 @@ a#twooneone {
   margin-top:1rem;
   margin-left:0;
 }
-#smallmenu div#donatebtn {  
-  margin-top:0.7rem;
-  margin-right:0.5rem;
-  background-color:#da291c;
+#smallmenu .donatebtncolumn p { 
+  background:#da291c;
+  width:7.2rem;
+  padding:0.5rem;
+   -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px;
+  float:right;
+}
+#smallmenu .donatebtncolumn p  a { 
+  font-size:0.9rem;
+  color:#fff;
+  text-transform: uppercase;
+}
+
+/*#smallmenu .donatebtncolumn #donatebtn p { 
+  background-color:#da291c;  
   width:7.2rem;
   padding:0.5rem;
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   border-radius: 5px;
-}
-#smallmenu #donatebtn a {
+}*/
+/*#smallmenu .donatebtncolumn #donatebtn p a {
   font-size:0.9rem;
   color:#fff;
   text-transform: uppercase;
-}
+}*/
 .smallmenuitems {
-  margin-right:1rem;  
+  margin-right:1rem; 
+}
+.smallitems {
+  padding-top:1.5rem;
+}
+.donatebtncolumn {
+  padding-top:1.5rem;  
+}
+.donatebtncolumn #donatebtn {
+  float:right;
 }
 #header {
   padding-top:0.7rem;
@@ -6232,7 +6236,7 @@ div#headerbtns {
 .logomedium {
   margin-left:auto;
   margin-right:auto;
-  width:60%;
+  /*width:60%;*/
   margin-top:0.5rem;
 }
 #slideshow div {
@@ -6259,7 +6263,7 @@ div#headerbtns {
   font-weight: bold;
   padding:0.2rem 0 0.2rem 2.6rem;
   margin:0 1rem 0 1rem;
-  background-image: url('../img/icon-impact.png');
+  background-image: url('image/new-website/icon-impact.png');
   background-repeat:no-repeat;
   background-position: 10px;
   -webkit-border-radius: 0 0 10px 0; 
@@ -6270,16 +6274,16 @@ div#headerbtns {
 }
 #contentbuckets h2.darkblue-background {
   background-color:#0072ce;  
-  background-image: url('../img/icon-trends.png');   
+  background-image: url('image/new-website/icon-trends.png');   
 }
 #contentbuckets h2.grey {
   color:#54585a;
   font-size:1.3rem;
   font-weight: bold;  
-  padding:0.5rem 0 0.5rem 1.8rem;
-  background-image: url('../img/icon-resources.png');
+  padding:0 0 0 1.8rem;
+  background-image: url('image/new-website/icon-resources.png');
   background-repeat:no-repeat;
-  background-position: 0;  
+  background-position: 0 0.2rem;  
 }
 #contentbuckets p {
   line-height:1.3rem;
@@ -6288,6 +6292,9 @@ div#headerbtns {
 }
 #contentbuckets hr.divider {
   margin-top:0;
+}
+#contentbuckets p img {
+background:yellow;
 }
 #footer1  {
   padding-top:1rem;
@@ -6350,6 +6357,8 @@ div.copyright {
 .copyright p {
   font-size:0.8rem;
 }
+
+
 /*--END HOME PAGE--*/
 
 /*--LANDING PAGE--*/
