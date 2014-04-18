@@ -1,0 +1,59 @@
+/*--------Table of Contents--------
+
+1. Foundation Simple Sytles
+2. UWT Styles
+-----------------------------------*/ 
+
+/* 1. Foundation Sytles
+====================================================================
+ Foundation sytles are created to make our site look "nice"
+ in older versions of IE.
+--------------------------------------------------------------------
+ April, 18 2014 - Harrison Created styles
+-------------------------------------------------------------------- 
+*/
+
+/* Make aure off canvas is hidden */
+.left-off-canvas-menu{
+	width: 0\0/;	
+}
+/* Following classes are toggled with js as default CSS3 are not good with this browser */
+.left-off-canvas-toggle-IE{width:250px;}
+.left-off-canvas-toggle-inner-IE{margin-left:250px;}
+
+/* Tell IE about our small- classes */
+#header .small-4{
+	width: 40%
+}
+#header .small-8{
+	width: 60%;
+}
+#header .small-12{
+	width: 100%;
+}
+
+#header .large-3{
+	width: 30%;
+}
+#header .large-9{
+	width: 70%;
+}
+/* ie-foundation-fix is added on window resize event with javascript */
+.ie-foundation-fix #header .small-12.large-3{
+	width: 100%;
+}
+/* 2. UWT Sytles
+====================================================================
+*/
+
+.smallsearchcontainer{
+	height:30px;
+}
+/* position sm menu with search */
+.sm-simple{
+	margin-left: 15px;
+}
+/* IE8 won't display our rem's */
+.sm-simple a {
+	padding: 5px 5px;
+}
