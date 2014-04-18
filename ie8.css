@@ -38,10 +38,30 @@
 #header .large-9{
 	width: 70%;
 }
+#landingcontent .large-3{
+	width: 25%;
+}
+#landingcontent .large-9{
+	width: 75%
+}
 /* ie-foundation-fix is added on window resize event with javascript */
 .ie-foundation-fix #header .small-12.large-3{
 	width: 100%;
 }
+.ie-foundation-fix #smallmenu .small-2{
+	width: 10%;
+}
+
+.ie-foundation-fix #smallmenu .small-5{
+	width: 30%;
+}
+.ie-foundation-fix #landingcontent .small-12.large-3{
+	width: 100%;
+}
+.ie-foundation-fix #landingcontent .small-12.large-9{
+	width: 100%;
+}
+
 /* 2. UWT Sytles
 ====================================================================
 */
