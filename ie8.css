@@ -22,10 +22,10 @@
 .left-off-canvas-toggle-inner-IE{margin-left:250px;}
 
 /* Tell IE about our small- classes */
-#header .small-4{
+#header .small-4, #utility .small-4{
 	width: 40%
 }
-#header .small-8{
+#header .small-8, #utility .small-8{
 	width: 60%;
 }
 #header .small-12{
