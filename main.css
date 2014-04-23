@@ -5678,28 +5678,34 @@ div.smallemail a, div.smallemail a:visited
 a[class^="readmore"] {
   border-bottom:0;
 }
-a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow {
+a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readmore-lightgreen {
   font-size:1.0rem;
   font-weight:bolder;
   text-transform: uppercase;
   color:#000;
-  background-image: url('image/new-website/chevron-blue.png');
+  /*background-image: url('image/new-website/common/chevron-blue.png');*/
   background-repeat:no-repeat;
   background-position:right;
   padding:0.5rem 2.7rem 0.5rem 0;
   display:inline-block;
   margin-top:0.1rem;
 }
+a.readmore-blue {
+  background-image: url('image/new-website/_common/chevron-blue.png');
+}
 a.readmore-darkblue {
-  background-image: url('image/new-website/chevron-darkblue.png');
+  background-image: url('image/new-website/_common/chevron-darkblue.png');
 }
 a.readmore-red {
-  background-image: url('image/new-website/chevron-red.png');
+  background-image: url('image/new-website/_common/chevron-red.png');
 }
 a.readmore-yellow {
-  background-image: url('image/new-website/chevron-yellow.png');
+  background-image: url('image/new-website/_common/chevron-yellow.png');
 }
-a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue {
+a.readmore-lightgreen {
+  background-image: url('image/new-website/_common/chevron-lightgreen.png');
+}
+a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen {
   color:#da291c;
   text-decoration:underline;
 }
@@ -6241,6 +6247,7 @@ div#headerbtns {
 }
 #slideshow div {
   padding:0;
+  background:yellow;
 }
 #contentbuckets {
   padding:1rem 0;
@@ -6294,7 +6301,7 @@ div#headerbtns {
   margin-top:0;
 }
 #contentbuckets p img {
-background:yellow;
+/*background:yellow;*/
 }
 #footer1  {
   padding-top:1rem;
@@ -6574,6 +6581,7 @@ div.detailscontent {
 /*--END MEDIA QUERY TO FIX SMALL THINGS--*/
 
 /*--ORBIT STYLES --*/
+
 /* Hide the Orbit slideshow guide unless it's admin view */
 #orbitGuide{ display: none;}
 form[action*="pagedesign"] #orbitGuide{display: block;}
@@ -6582,20 +6590,68 @@ form[action*="pagedesign"] #orbitGuide{display: block;}
 #slideshow ul li:first-child{display: block;}
 /* Reset image display property after js "kicks-in"*/
 #slideshow .orbit-container ul li{display: block;}
+
+
 /* Desktop */
 .orbit-container{
 	overflow: hidden;
 	width: 100%;
 	position: relative;
 }
+/*Hide the slide numbers until viewing on a small device*/
+.orbit-slide-number {
+  display:none;
+}
+/*#slideshow .orbit-container .orbit-slides-container > * .orbit-caption {
+  background-color: #fff;
+  color: #333;
+  font-size: 1.1rem;
+  line-height:1.5rem;
+  padding: 1rem;
+  position: relative;
+  top:-28.7rem;
+  left:42rem;
+  width: 31%;
+  border-radius: 0 0 1rem 1rem;
+}*/
+/*Move the caption to the top right of the slide*/
+#slideshow .orbit-container .orbit-slides-container .orbit-caption {
+  background:purple;
+  width:30%;
+  position:relative;
+  top:-28.5rem;
+  left:42rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+/*Remove the dotted underline on the prev/next buttons*/
+a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
+  border-bottom:0;
+}
+/*Hide the timer*/
+.orbit-timer {
+  display:none;
+}
+
+
+
+
 /* Tablet */
 @media (max-width: 768px) {
-	
+
+  /*Move caption to below the image and change background/color*/
+  
+
+
 }
 /* Mobile */
 @media (max-width: 480px) {
-	
+/*Show the slide numbers on small devices, underneath the slides*/
+  .orbit-slide-number {
+    display:block;
+  }	
 }
+
 /*--END ORBIT STYLES --*/
 
 /*-----------END 4. UWT styles-----------*/
