@@ -12,7 +12,7 @@
       DETAILS PAGE
       DONATION PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
-      ORBIT SLIDESHOW
+      ORBIT SLIDESHOW      
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
 
 -----------------------------------*/ 
@@ -5530,10 +5530,161 @@ input.BBFormTextbox {
     color:lime;
   }
 
+}
+/*END DONATION FORM*/
 
+
+/*EVENT REGISTRATION PART*/
+
+/*Change background color of progress cells*/
+.EventTable .EventProgressCell {
+  background-color:#de7c00;
+  color:#fff;
+}
+.EventTable .EventProgressCellFuture {
+  background-color: #fff;
+}
+.EventTable .EventProgressCellPast
+ {
+  background-color: #dddddd;
+}
+/*Remove borders and padding from around tables*/
+.EventTable table[id$="Wizard1"], table[id$="Wizard1"] table { 
+  border:0;
+}
+.EventTable table[id$="Wizard1"] td { 
+  padding:0;
+}
+/*Hide the Quantity and Pricing header*/
+.EventTable span[id$="lblPriceHeader"] {
+  display:none;
+}
+/*Increase width of number of tickets dropdown*/
+.EventTable .EventItemRegistrationControlCellQuantity select {
+  width:4rem !important;
+  margin-right:0.5rem;
+}
+/*Line up field labels horizontally*/
+.EventTable .EventItemRegistrationControlCellDescription label[id$="lblDescription_0"] {
+  margin-bottom:0;
+}
+/*Reduce width of ticket seleciton area so that price is not so far to the right*/
+.EventTable .EventItemRegistrationsTable {
+  width:80%;
+  position:relative;
+  left:-1rem;
+}
+/*Change look of the submit button*/
+.EventTable table[id$="Wizard1"] table td input.BBFormSubmitButton {  
+  background-color: #de7c00;
+  color:#fff;
+  text-transform:uppercase;
+  padding: 0.5rem 0 0.5rem 0;
+  width:6rem;
+  border:1px solid #fff;
+  -webkit-border-radius: 0.5rem; 
+  -moz-border-radius: 0.5rem; 
+  border-radius:  0.5rem;
+}
+/*Increase size of font throughout steps*/
+.EventTable table tr td {
+  font-size:1rem;
+}
+/*Remove grey background behind total in step 2*/
+.EventTable .EventAttendeesOverallTotal, .EventTable .EventAttendeesCurrent {
+  background-color: #fff;
+}
+/*Increase space below event name in summary page*/ 
+.EventTable tr.BBListEvenRowStyle td.EventItemRegistrantsHeader {
+  padding-top:1rem;
+}
+/*Remove extra space between Attendee listings*/
+.EventTable table[id$="dgRegistrantList_0"] {
+  margin-bottom:0;
+}
+/*Remove grey background on Step 3 above total amount*/ 
+.EventTable .EventAttendeesComplete {
+  background-color: #fff;
+}
+/*Style the Step 3 headings*/
+.EventTable .BBListingHeading {
+  background-color: #ffffff;
+  text-align: left;
+}
+.EventTable .DonationCaptureFieldCaption {
+  background: none repeat scroll 0 0 #fff;
+}
+.EventTable .BBListingHeading span {
+  color:#de7c00;
+  font-weight:bold;
+  font-size:1.3rem;
+  display:block;
+  position: relative;
+}
+.EventTable .BBListingHeading, .EventTable .BBFormTable {
+    border: 0pt;
+}
+/*Draw a line under the section headings*/
+.EventTable .BBListingHeading span:after {
+  content: '\A ';
+  white-space: pre;
+  position: absolute;
+  left:0rem;
+  width:100%;
+  bottom:-20%;
+  border-bottom: 1px solid #54585a;
+}
+/*Increase space under headings*/
+.EventTable tbody:before {
+  content:"\a";
+  white-space: pre;
+}
+/*Reduce size of Step 4 H2 heading*/
+.EventTable h2 {
+  font-size:2rem;
+  color:lime;
+}
+/*Remove grey background behind labels on Step 4*/
+.EventTable .BBEventConfirmation label.BBFieldCaption {
+  background:#fff;
+}
+/*Top-align meal preference question, etc.*/
+.EventTable .BBFieldCaption {
+  vertical-align:top;
+}
+/*Add space between meal preference question and options*/
+.EventTable .BBFieldCaption label {
+  margin-right:1rem;
+}
+/*Move the mandatory asterisks up*/
+.EventTable .BBFormRequiredFieldMarker {
+  vertical-align:top;
+}
+/*Add space under the amount in Step 3*/
+.EventTable tr[id$="DonationCapture1_trAmount"] td.BBFieldCaption,
+.EventTable tr[id$="DonationCapture1_trAmount"] td.BBFieldControlCell
+{
+  padding-bottom:1rem;
+}
+/*Align the credit card fields*/
+.EventTable td.sDonationCaptureFieldControlCell table {
+  width:100%;
+}
+.EventTable td.sDonationCaptureFieldControlCell table td {
+  width:50%;
+}
+.EventTable td.sDonationCaptureFieldControlCell table td select {
+  width:90%;
+}
+.EventTable td.sDonationCaptureFieldControlCell table td label {
+  display: inline;
 }
 
-/*END DONATION FORM*/
+
+
+
+/*END EVENT REGISTRATION PART*/
+
 
 /*-----------END 3. BBIS Part styles-----------*/
 
@@ -5542,8 +5693,12 @@ input.BBFormTextbox {
 
 /*--CROSS-SITE STYLES TO OVERWRITE FOUNDATION STYLES--*/
 
+p.nopad {
+  padding: 0;
+  margin: 0;
+}
 /*Skip to content link for screenreader users and keyboard users*/
-.skip{
+.nopad .skip{
   position:absolute;
    /* Adjust top attribute value to meet your needs */
   top: -100%;
@@ -5551,17 +5706,13 @@ input.BBFormTextbox {
   -webkit-transition: top 1s ease-out, background 1s linear;
   transition: top 1s ease-out, background 1s linear;
 }
-.skip:focus{
+.nopad .skip:focus{
   top:0;
   text-indent:0;
   /* CSS3 annimation into view */
   -webkit-transition: top .1s ease-in, background .5s linear;
   transition: top .1s ease-in, background .5s linear;
   background:#fff;
-}
-#utility p.nopad {
-  padding:0;
-  margin-bottom: 0rem;
 }
 
 .pagecontainer {
@@ -5683,7 +5834,6 @@ a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readm
   font-weight:bolder;
   text-transform: uppercase;
   color:#000;
-  /*background-image: url('image/new-website/common/chevron-blue.png');*/
   background-repeat:no-repeat;
   background-position:right;
   padding:0.5rem 2.7rem 0.5rem 0;
@@ -5691,19 +5841,19 @@ a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readm
   margin-top:0.1rem;
 }
 a.readmore-blue {
-  background-image: url('image/new-website/_common/chevron-blue.png');
+  background-image: url('image/new-website/chevron-blue.png');
 }
 a.readmore-darkblue {
-  background-image: url('image/new-website/_common/chevron-darkblue.png');
+  background-image: url('image/new-website/chevron-darkblue.png');
 }
 a.readmore-red {
-  background-image: url('image/new-website/_common/chevron-red.png');
+  background-image: url('image/new-website/chevron-red.png');
 }
 a.readmore-yellow {
-  background-image: url('image/new-website/_common/chevron-yellow.png');
+  background-image: url('image/new-website/chevron-yellow.png');
 }
 a.readmore-lightgreen {
-  background-image: url('image/new-website/_common/chevron-lightgreen.png');
+  background-image: url('image/new-website/chevron-lightgreen.png');
 }
 a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen {
   color:#da291c;
@@ -6623,7 +6773,6 @@ form[action*="pagedesign"] #orbitGuide{display: block;}
   left:42rem;
   border-radius: 0 0 1rem 1rem;
 }
-
 /*Remove the dotted underline on the prev/next buttons*/
 a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
   border-bottom:0;
@@ -6632,7 +6781,9 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 .orbit-timer {
   display:none;
 }
+/*Move the prev/next arrows*/
 
+/*Change the arrow style*/
 
 
 
