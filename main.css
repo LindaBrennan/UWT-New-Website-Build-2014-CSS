@@ -5461,6 +5461,10 @@ input.BBFormTextbox {
 .DonationValidationSummary ul li {
    font-size:0.9rem; 
  }
+ /*Remove underline from blue Help question mark link*/
+a.BBLinkHelpIcon {
+  border-bottom: 0;
+}
 
 /*Changes to donation form for small devices*/
 @media screen and  /*!YUI Compressor*/  (max-width: 480px) {
@@ -5511,10 +5515,10 @@ input.BBFormTextbox {
   /*Add vertical space between the credit card fields*/
   .DonationFormTable select[id$="cboMonth"] {
     margin-bottom:0.5rem;
-  }
+  }  
     /*Add vertical space above the Billing Info header*/
   .DonationFormTable select[id$="ddlSources"] {
-    margin-bottom:0.5rem;
+    margin-bottom:0.5rem;    
   }
   /* hide default required fieldmarker */
   tr.hasRequired td.DonationRequiredFieldMarker, tr.hasRequired td.DonationCaptureRequiredFieldMarker {
@@ -5523,12 +5527,17 @@ input.BBFormTextbox {
   tr.hasRequired span.DonationRequiredFieldMarker {
     display: none;
   }
-  /* add required fieldmarker to label */
+  /*Add required fieldmarker to labels*/
   tr.hasRequired td:first-child:before{
     content:'*';
     display: inline;
-    color:lime;
+    color:#da291c;
   }
+  /*Remove required fieldmarker from credit card month field*/
+  tr.hasRequired td table td:first-child:before{
+      content:'';
+      display: inline;
+    }
 
 }
 /*END DONATION FORM*/
@@ -5679,10 +5688,48 @@ input.BBFormTextbox {
 .EventTable td.sDonationCaptureFieldControlCell table td label {
   display: inline;
 }
+/*Add padding between the rows in the Step 4 summary*/
+.EventTable table[id$="Wizard1"] table td.dInlineBlock {
+  padding-bottom:1rem;
+  vertical-align:top;
+}
+.EventTable table[id$="Wizard1"] table td[id*="DonationCaptureDisplay1"] {
+  padding-bottom:1rem; 
+  vertical-align:top;
+}
+.EventTable table[id$="Wizard1"] table td.BBFieldControlCell {
+  vertical-align:top;
+  padding-left:0.5rem;
+} 
 
+/*Changes to Events form for small devices*/
+/*@media screen and  /*!YUI Compressor*/  /*(max-width: 480px) {*/
+@media screen and  /*!YUI Compressor*/  (max-width: 768px) {
 
+  /*Stack the table cells vertically*/
+  .EventTable {
+    padding:0.5rem;
+    width:98%;
+    background:gold; 
+  }
+  .EventTable td
+   {
+    display:block;
+    background:pink;
+  }
+  /*Hide the steps table*/
+  .EventTable table[id$="tblProgress"] {
+    display:none;    
+  }
+  /*Step 1 - Hide the second row that contains the duplicate event name*/
+  .EventTable .EventItemsTable tr:nth-child(2) {
+    display:none;
+  }
+  .EventTable .EventItemTitleTime {
+  font-weight:normal;
+  }
 
-
+}
 /*END EVENT REGISTRATION PART*/
 
 
@@ -6449,9 +6496,6 @@ div#headerbtns {
 }
 #contentbuckets hr.divider {
   margin-top:0;
-}
-#contentbuckets p img {
-/*background:yellow;*/
 }
 #footer1  {
   padding-top:1rem;
