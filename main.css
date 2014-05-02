@@ -10,6 +10,7 @@
       HOME PAGE
       LANDING PAGE
       DETAILS PAGE
+      SIDEBAR ITEMS
       DONATION PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
       ORBIT SLIDESHOW      
@@ -5709,13 +5710,11 @@ a.BBLinkHelpIcon {
   /*Stack the table cells vertically*/
   .EventTable {
     padding:0.5rem;
-    width:98%;
+    width:100%;
     background:gold; 
   }
-  .EventTable td
-   {
+  .EventTable td {
     display:block;
-    background:pink;
   }
   /*Hide the steps table*/
   .EventTable table[id$="tblProgress"] {
@@ -5727,6 +5726,14 @@ a.BBLinkHelpIcon {
   }
   .EventTable .EventItemTitleTime {
   font-weight:normal;
+  }
+  .EventTable .BBFieldCaption {
+    text-align:left;
+  }
+  .EventTable .EventItemRegistrantSelectList,
+  .EventTable .BBFormTextbox,
+  .EventTable .BBFormTextArea {
+    width: 80%;
   }
 
 }
@@ -6738,7 +6745,6 @@ div.landingcontent {
 ul.sm ul.sm-nowrap > li > a {
     white-space: normal;
 }
-
 /*--END LANDING PAGE--*/
 
 /*--DETAILS PAGE--*/
@@ -6748,6 +6754,22 @@ div.detailscontent {
   padding-top:0;
 }
 /*--END DETAILS PAGE--*/
+
+
+/*--SIDEBAR ITEMS--*/
+.imaginecanada {
+  padding-top:1rem;
+}
+.meetourleaders p {
+  line-height:1rem;
+  margin-bottom:0.5rem;  
+}
+.meetourleaders p a.readmore-red {
+  padding-top:1rem;
+}
+
+/*--END SIDEBAR ITEMS--*/
+
 
 /*--MEDIA QUERY TO FIX SMALL THINGS THAT COULDN'T BE DONE EASILY OTHERWISE--*/
 
