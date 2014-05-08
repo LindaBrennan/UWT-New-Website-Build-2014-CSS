@@ -5738,6 +5738,69 @@ a.BBLinkHelpIcon {
   }
 
 }
+
+@media(max-width: 480px)
+{
+    /* fix for mobile to stop table cut off*/
+	.EventTable{ display:block; }
+	.EventTable tr{display:block;}
+	.EventTable td{float:left; clear: both; width: 100%;}
+
+	/* part is in test mode */
+	[id*="TestModeWarning"] span{max-width:80%;}
+	
+	/* display buttons left and right */
+	.EventTable .buttonsTable {width: 100%; }
+    .EventTable .buttonsTable tr td:first-child input{float: left;}
+    .EventTable .buttonsTable tr td:first-child + td input{float: right;}
+	.EventTable .buttonsTable tr td:first-child {width: 25%; float: left; clear: none;}
+	.EventTable .buttonsTable tr td:first-child + td {width: 25%; float: right; clear: none;}
+	
+	/* display summary table table info */
+	.EventTable .EventAttendeesComplete table.w100p{
+		
+	}
+	.EventTable [id*="AttendeesSummary2_dgEventTickets"]{
+		margin-bottom: 0;
+	}
+	.EventTable .EventTicketsHeaderCell{
+		display: none;
+	}
+	.EventTable .EventTicketsBodyCell{
+		width:100% !important;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblQty"]:before{
+		content:'Qty: ';
+		display: inline;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblDescription"]:before{
+		content:'Selection: ';
+		display: inline;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblAttendees"]:before{
+		content:'Attendees: ';
+		display: inline;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblPrice"]:before{
+		content:'Price: ';
+		display: inline;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblPriceC"]:before{
+		content:' ';
+		display: inline;
+	}
+	.EventTable .EventTicketsBodyCell [id*="lblTotal"]:first-child:before{
+		content:'Sub Total: ';
+		display: inline;
+	}
+	.EventTable .EventAttendeesOverallTotal [id$="dgAttendeesSummary_lblEventTotal"]:before{
+		content:'Total: ';
+		display: inline;
+	}
+	.EventTable  .EventAttendeesCurrent tbody tr:first-child td:first-child{
+		display: none;
+	}
+}
 /*END EVENT REGISTRATION PART*/
 
 
