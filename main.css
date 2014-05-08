@@ -13,7 +13,8 @@
       SIDEBAR ITEMS
       DONATION PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
-      ORBIT SLIDESHOW      
+      ORBIT SLIDESHOW  
+      GOOGLE MAP    
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
 
 -----------------------------------*/ 
@@ -5883,7 +5884,7 @@ div.smallemail a, div.smallemail a:visited
 a[class^="readmore"] {
   border-bottom:0;
 }
-a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readmore-lightgreen {
+a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readmore-lightgreen, a.readmore-white {
   font-size:1.0rem;
   font-weight:bolder;
   text-transform: uppercase;
@@ -5907,10 +5908,18 @@ a.readmore-yellow {
   background-image: url('image/new-website/chevron-yellow.png');
 }
 a.readmore-lightgreen {
-  background-image: url('image/new-website/chevron-lightgreen.png');
+  background-image: url('https://bbis.spark.uwgt.org/image/new-website/_common/chevron-lightgreen.png');
+}
+a.readmore-white {
+  color:#fff;
+  background-image: url('https://bbis.spark.uwgt.org/image/new-website/_common/chevron-white.png');
 }
 a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen {
   color:#da291c;
+  text-decoration:underline;
+}
+a:hover.readmore-white {
+  color:#fff;
   text-decoration:underline;
 }
 img.piechart {   
@@ -6451,7 +6460,6 @@ div#headerbtns {
 }
 #slideshow div {
   padding:0;
-  background:yellow;
 }
 #contentbuckets {
   padding:1rem 0;
@@ -6796,48 +6804,41 @@ div.detailscontent {
 }
 /*--END MEDIA QUERY TO FIX SMALL THINGS--*/
 
+
 /*--ORBIT STYLES --*/
 
 /* Hide the Orbit slideshow guide unless it's admin view */
-#orbitGuide{ display: none;}
-form[action*="pagedesign"] #orbitGuide{display: block;}
+#orbitGuide {
+  display: none;
+}
+form[action*="pagedesign"] #orbitGuide {
+  display: block;
+}
 /* Display only the first image before js "kicks-in"*/
-#slideshow ul li{display: none;}
-#slideshow ul li:first-child{display: block;}
+#slideshow ul li { 
+  display: none;
+}
+#slideshow ul li:first-child { 
+  display: block;
+}
 /* Reset image display property after js "kicks-in"*/
-#slideshow .orbit-container ul li{display: block;}
-
-
-/* Desktop */
+#slideshow .orbit-container ul li { 
+  display: block;
+}
 .orbit-container{
 	overflow: hidden;
 	width: 100%;
 	position: relative;
+  max-height:543px;/*Prevent extra space under slideshow*/
+  border:2px solid red; 
+}
+/*Hide the slide number selector (dots under slider)*/
+.orbit-container .orbit-bullets {
+  display:none;
 }
 /*Hide the slide numbers until viewing on a small device*/
 .orbit-slide-number {
   display:none;
-}
-/*#slideshow .orbit-container .orbit-slides-container > * .orbit-caption {
-  background-color: #fff;
-  color: #333;
-  font-size: 1.1rem;
-  line-height:1.5rem;
-  padding: 1rem;
-  position: relative;
-  top:-28.7rem;
-  left:42rem;
-  width: 31%;
-  border-radius: 0 0 1rem 1rem;
-}*/
-/*Move the caption to the top right of the slide*/
-#slideshow .orbit-container .orbit-slides-container .orbit-caption {
-  background:purple;
-  width:30%;
-  position:relative;
-  top:-28.5rem;
-  left:42rem;
-  border-radius: 0 0 1rem 1rem;
 }
 /*Remove the dotted underline on the prev/next buttons*/
 a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
@@ -6847,29 +6848,117 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 .orbit-timer {
   display:none;
 }
-/*Move the prev/next arrows*/
-
-/*Change the arrow style*/
-
-
-
-/* Tablet */
-@media (max-width: 768px) {
-
-  /*Move caption to below the image and change background/color*/
-  
-
-
+/*Increase size and reposition prev/next arrows*/
+.orbit-container .orbit-prev > span {
+  left: 30%;
+  top:31%;
+  border-width:20px 20px 20px 0;
 }
-/* Mobile */
-@media (max-width: 480px) {
-/*Show the slide numbers on small devices, underneath the slides*/
-  .orbit-slide-number {
-    display:block;
-  }	
+.orbit-container .orbit-next > span {
+  left: 30%;
+  top:31%;
+  border-width:20px 0 20px 20px;
 }
+/*Decrease size of hover area on prev/next arrows*/
+.orbit-container .orbit-prev, .orbit-container .orbit-next {
+  height: 55px;
+}
+/*Right-align read more links*/
+.orbit-caption div {
+  text-align:right;
+}
+
+  /*---Desktop ---*/
+    @media (min-width : 1024px) {
+    /*Change the background and color of the caption & 
+    Move the caption to the top right of the slide*/
+    .orbit-container .orbit-slides-container > * .orbit-caption {
+      bottom: 0;
+      color: #000;  
+      width:31%;
+      position:relative;
+      top:-30.5rem;
+      left:40rem;
+      border-radius: 0 0 1rem 1rem;
+      background:#fff;
+    }
+    #slideshow .orbit-container div {
+      padding: 0.5rem;
+    }
+  }
+
+  /*---Tablet ---*/
+  @media (min-width: 640px) and /*!YUI Compressor*/ (max-width : 1024px) {
+
+  .orbit-container {
+      border:2px solid pink; 
+    }
+    /*Return to original caption overlay position*/
+    .orbit-container .orbit-slides-container > * .orbit-caption {
+      background-color: #fff;      
+      color: #000;
+      font-size: 0.875rem;
+      padding: 0.625rem 0.875rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;      
+      min-height:6rem;
+    }
+    #slideshow .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }
+
+  }
+
+  /*---Large phone---*/
+  @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
+
+    .orbit-container { 
+      border:1px solid purple; 
+    }
+    .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      top:-1rem;
+      left:0;
+      width: 98%;
+    }
+    #slideshow .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    } 
+
+  }
+
+  /*---Small phone---*/
+  @media (max-width : 480px) {
+
+    .orbit-container { 
+      border:2px solid gold; 
+    }
+    .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      top:-1rem;
+      left:0;
+      width: 98%;
+    }
+    #slideshow .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }
+    /*Hide prev/next arrows*/    
+    a.orbit-next, a.orbit-prev {
+      display:none;
+    }
+
+  }
 
 /*--END ORBIT STYLES --*/
+
+/*--GOOGLE MAP STYLES--*/
+
+/*--END GOOGLE MAP STYLES--*/
 
 /*-----------END 4. UWT styles-----------*/
 
