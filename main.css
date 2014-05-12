@@ -5804,6 +5804,36 @@ a.BBLinkHelpIcon {
 }
 /*END EVENT REGISTRATION PART*/
 
+/*DOCUMENTS UPLOADER PART*/
+
+/*Remove borders around tables*/
+.BBDocumentFormTable {
+  border:0;
+}
+.BBDocumentFormTable table {
+  border:0;
+}
+
+/*Remove grey background from odd rows*/
+.BBDocumentDisplayTable .BBListOddRowStyle {
+  background-color: #fff;
+}
+/*Remove italics from descriptions*/
+.BBDocumentDisplayTable .BBDocumentDisplayDescriptionStyle {
+  font-style: normal;
+}
+.BBDocumentFormTable .BBDocumentFormTitle {
+  text-align: left;
+}
+.BBDocumentFormTable .BBDocumentDisplaySeparator {
+  margin:0;
+}
+.BBDocumentFormTable .BBDocumentDisplayHeaderRow {
+  display:none;
+}
+
+
+/*END DOCUMENTS UPLOADER PART*/
 
 /*-----------END 3. BBIS Part styles-----------*/
 
@@ -6790,7 +6820,7 @@ div.landingcontent {
     background:none;
  }
 .sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sm-simple a.highlighted:last-child {
-	color:#da291c;
+  color:#da291c;
 }  
 /*Make the active menu item turn red (doesn't apply on level-one links)*/
 .sidebar .sm-simple li ul li a.selected {
@@ -6891,9 +6921,9 @@ form[action*="pagedesign"] #orbitGuide {
   display: block;
 }
 .orbit-container{
-	overflow: hidden;
-	width: 100%;
-	position: relative;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
   max-height:543px;/*Prevent extra space under slideshow*/
   border:2px solid red; 
 }
