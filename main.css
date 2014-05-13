@@ -5990,23 +5990,23 @@ a.readmore-blue, a.readmore-darkblue, a.readmore-red, a.readmore-yellow, a.readm
   margin-top:0.1rem;
 }
 a.readmore-blue {
-  background-image: url('image/new-website/chevron-blue.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-blue.png');
 }
 a.readmore-darkblue {
-  background-image: url('image/new-website/chevron-darkblue.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-darkblue.png');
 }
 a.readmore-red {
-  background-image: url('image/new-website/chevron-red.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-red.png');
 }
 a.readmore-yellow {
-  background-image: url('image/new-website/chevron-yellow.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-yellow.png');
 }
 a.readmore-lightgreen {
-  background-image: url('https://bbis.spark.uwgt.org/image/new-website/_common/chevron-lightgreen.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-lightgreen.png');
 }
 a.readmore-white {
   color:#fff;
-  background-image: url('https://bbis.spark.uwgt.org/image/new-website/_common/chevron-white.png');
+  background-image: url('Image/MainWebsite/X_Common/chevron-white.png');
 }
 a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen {
   color:#da291c;
@@ -6577,7 +6577,7 @@ div#headerbtns {
   font-weight: bold;
   padding:0.2rem 0 0.2rem 2.6rem;
   margin:0 1rem 0 1rem;
-  background-image: url('image/new-website/icon-impact.png');
+  background-image: url('Image/MainWebsite/X_Common/icon-impact.png');
   background-repeat:no-repeat;
   background-position: 10px;
   -webkit-border-radius: 0 0 10px 0; 
@@ -6588,16 +6588,19 @@ div#headerbtns {
 }
 #contentbuckets h2.darkblue-background {
   background-color:#0072ce;  
-  background-image: url('image/new-website/icon-trends.png');   
+  background-image: url('Image/MainWebsite/X_Common/icon-trends.png');   
 }
 #contentbuckets h2.grey {
   color:#54585a;
   font-size:1.3rem;
   font-weight: bold;  
   padding:0 0 0 1.8rem;
-  background-image: url('image/new-website/icon-resources.png');
+  background-image: url('Image/MainWebsite/X_Common/icon-resources.png');
   background-repeat:no-repeat;
   background-position: 0 0.2rem;  
+}
+#contentbuckets h2.yellow-background {
+  background-image: url('Image/MainWebsite/X_Common/icon-impact.png');
 }
 #contentbuckets p {
   line-height:1.3rem;
@@ -6705,6 +6708,9 @@ div.sidebar {
 .sideitem .sideitem-notop {
   border-top:0;
   padding-top:0;
+}
+.sideitem .sideitem-last {
+  border-bottom:0;
 }
 .sideitem .sidebarinner p {
   font-size:1.0rem;
