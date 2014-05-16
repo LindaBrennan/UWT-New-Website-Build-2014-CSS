@@ -14,6 +14,7 @@
       DONATION PAGE
       MEDIA QUERY TO FIX SMALL THINGS 
       ORBIT SLIDESHOW
+      ACCORDION STYLES
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
 6. Annual Report microsite styles
     PHOTO ESSAY (FOTORAMA PLUG-IN)
@@ -7072,6 +7073,13 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
   }
 
 /*--END ORBIT STYLES --*/
+
+/*--ACCORDION STYLES--*/
+.accordion-part a, .accordion-part a:hover {
+  border-bottom:1px #ddd solid;
+}
+/*--ACCORDION STYLES--*/
+
 
 /*-----------END 4. UWT styles-----------*/
 
