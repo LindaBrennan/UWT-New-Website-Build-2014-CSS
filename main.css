@@ -17,7 +17,7 @@
       ACCORDION STYLES
 5. TinyMCE specific fixes to Foundation show/hide styles for BBIS
 6. Annual Report microsite styles
-    PHOTO ESSAY (FOTORAMA PLUG-IN)
+      PHOTO ESSAY (FOTORAMA PLUG-IN)
 
 -----------------------------------*/ 
 
@@ -6876,26 +6876,77 @@ div.detailscontent {
 
 /*--SIDEBAR ITEMS--*/
 
-/*Text Only Sidebar Items*/
-.sidebar-textonly p {
-  line-height:1.2rem;
+/*Text Only Sidebar Items - for example, charitable registration number*/
+.sidebarinner .sidebar-textonly p {
+  line-height:1.1rem;
+  font-size:0.75rem;
+  font-weight:bold;
+  color:#797979;
 }
+  /*Small device changes for Text Only Sidebar Items*/
+    @media (max-width : 640px) {
+      .sidebar-textonly p {          
+          font-size:0.9rem;
+          line-height:1.0rem;
+          font-weight:bold;
+          color:#797979;
+      }
+      .sidebar-textonly p span {          
+          color:#da291c;
+      }      
+    }
 
-/*Logo Sidebar Items*/
+/*Logo Sidebar Items - for example, Imagine Canada*/
 .sidebar-logo {
   padding-top:1rem;
 }
-
-/*Story Sidebar Items*/
-.sidebar-story p {
+.sideitem .sidebarinner p.sidebar-logo a.readmore-red {
+  text-transform: none;
+  font-size:0.8rem;
   line-height:1rem;
-  margin-bottom:0.5rem;  
+  color:#54585a;
+  text-decoration:underline;
+  margin-top:0;
+  padding: 1rem 1.5rem 0.5rem 0;
 }
-.sidebar-story p a.readmore-red {
-  padding-top:1rem;
+p.sidebar-logo {
+  padding-top:0;
+}
+    /*Small device changes for Logo Sidebar Items*/
+    @media (max-width : 640px) {
+      .sideitem .sidebarinner p.sidebar-logo a.readmore-red {
+      font-size:1rem;
+      padding: 1rem 3rem 0.5rem 0;
+      margin-top:0;
+      }
+    }
+
+/*Story Sidebar Items - for example, Meet our leaders*/
+.sidebarinner .sidebar-story p {
+  font-size:0.9rem;
+  line-height:1.1rem;
+  font-weight:normal; 
+  color:#000; 
+  padding-bottom:0;
+  margin-bottom:0;
+}
+.sidebarinner .sidebar-story h2 {
+  font-size:1rem;
+  line-height:1.1rem;
+  font-weight:bold;
+}
+.sidebarinner .sidebar-story p.sidebar-story a.readmore-red {
+  text-transform: none;
+  font-size:0.8rem;
+  line-height:1rem;
+  color:#54585a;
+  text-decoration:underline;
+  margin-top:0;
+  padding: 1rem 3rem 1.5rem 0;
 }
 
-/*Reports Sidebar Items*/
+
+/*Reports Sidebar Items - for example, Report to the Community*/
 .sidebar-report {
   background:#da291c;
   -webkit-border-bottom-right-radius: 10px;
@@ -6916,7 +6967,7 @@ div.detailscontent {
   text-align:right;
 }
 
-/*Logo + Text Sidebar Items*/
+/*Logo + Text Sidebar Items - for example, Community Matters*/
 .sidebar-logotext {
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
@@ -6944,7 +6995,7 @@ div.detailscontent {
   height:51px;
 }
 
-/*Page Link Sidebar Items*/
+/*Page Link Sidebar Items - for example, Join Our Team*/
 .sidebar-pagelink {
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
@@ -6956,22 +7007,32 @@ div.detailscontent {
   padding:0.5rem;
 }
 .sidebar-pagelink .inner p {
-  font-size:1.0rem;
-  padding-top:0.5rem;
+  font-size:0.9rem;  
   margin-bottom:0;
-  line-height:1.0rem; 
-  color:#707372; 
+  line-height:1.5rem; 
+  color:#707372;
+  padding-top:0.5rem; 
 }
+.sidebar-pagelink .inner p a, .sidebar-pagelink .inner p a:visited {
+  border-bottom: 1px dotted #54585a;
+  color:#54585a;
+}
+.sidebar-pagelink .inner p a:hover, .sidebar-pagelink .inner p a:visited:hover {  
+  border-bottom: 1px solid #54585a;
+}
+
 .sidebar-pagelink p.chevron {
   text-align:right;
 }
 .sidebar-pagelink .logo {
   height:51px;
 }
-/*Phone changes for Join Our Team*/
+    /*Small device changes for Link Sidebar Items*/
     @media (max-width : 640px) {
-      .sidebar-pagelink p a {          
-          font-size:2rem;
+      .sidebar-pagelink .inner p {          
+          font-size:1.4rem;
+          padding-top:0.8rem;
+          line-height:1.9rem;
       }
     }
 
@@ -7003,14 +7064,14 @@ div.detailscontent {
   display:block;
   line-height:1rem;
 }
-    /*Tablet changes for Infographic*/
+    /*Tablet changes for Infographic Sidebar Items*/
     @media (min-width: 640px) and /*!YUI Compressor*/ (max-width : 1024px) {
       
       .sidebar-info .sidebar-info-number {
         font-size:2rem;
       } 
     }
-    /*Phone changes for Infographic*/
+    /*Small device changes for Infographic Sidebar Items*/
     @media (max-width : 640px) {
       .sidebar-info p a {
           padding:2rem;
@@ -7236,6 +7297,23 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 
 /*-----------6. Annual Report microsite styles-----------*/
 
+/*Remove extra padding on home page buckets row 1 - for large devices*/
+#ARhomebuckets p {
+  margin-bottom:0;
+}
+/*Add padding between buckets when stacked on small device*/
+#ARhomebuckets .small-12 p {
+  margin-bottom:0.5rem;  
+}
+
+/*Centre bucket contents in the middle of the width of the bucket - in tablet and mobile this means centres on screen when stacking*/
+.bucketimage { 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+
 /*Reduce font size and padding of horizontal menu to fit all menu items*/
 .annual-report a {
   color: #000;
@@ -7247,12 +7325,11 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 .annual-report ul li[class*='menuItem'] {
   padding-left:0.5rem;
 }
-
-@media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
-  .annual-report a {    
-    padding-left: 1rem;    
+  @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
+    .annual-report a {    
+      padding-left: 1rem;    
+    }
   }
-}
 
 /*--PHOTO ESSAY (FOTORAMA PLUG-IN)--*/
 
@@ -7360,7 +7437,7 @@ tion:none;top:0;bottom:0;width:10px;height:auto;z-index:10;pointer-events:none;b
   }
 
 }
-
 /*--END PHOTO ESSAY (FOTORAMA PLUG-IN)--*/
+
 
 /*-----------END 6. Annual Report microsite styles-----------*/
