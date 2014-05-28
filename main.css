@@ -5828,6 +5828,9 @@ a.BBLinkHelpIcon {
 .BBDocumentFormTable .BBDocumentDisplayHeaderRow {
   display:none;
 }
+.BBDocumentFormTable{ display: none;}
+.BBDocumentFormTable.complete{display: block;}
+.BBDocumentFormTable.complete .adminInfo{display: none;}
 
 
 /*END DOCUMENTS UPLOADER PART*/
