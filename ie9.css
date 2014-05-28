@@ -1,0 +1,27 @@
+/*--------Table of Contents--------
+
+1. Foundation Simple Styles
+2. UWT Styles
+-----------------------------------*/ 
+
+/* 1. Foundation Styles
+====================================================================
+ Foundation styles are created to make our site look "nice"
+ in older versions of IE.
+--------------------------------------------------------------------
+ May, 28 2014 - Harrison Created styles
+-------------------------------------------------------------------- 
+*/
+
+/* Make sure off canvas is hidden */
+.left-off-canvas-menu{
+	width: 0\0/;	
+}
+/* Following classes are toggled with js as default CSS3 are not good with this browser */
+.left-off-canvas-toggle-IE{width:250px;}
+.left-off-canvas-toggle-inner-IE{margin-left:250px;}
+
+
+/* 2. UWT Styles
+====================================================================
+*/
