@@ -5830,8 +5830,9 @@ a.BBLinkHelpIcon {
 }
 .BBDocumentFormTable{ display: none;}
 .BBDocumentFormTable.complete{display: block;}
-.BBDocumentFormTable.complete .adminInfo{display: none;}
 .BBDocumentFormTable.complete.admin .adminInfo{display: block;}
+.BBDocumentFormTable.complete .adminInfo{display: none;}
+
 
 /*END DOCUMENTS UPLOADER PART*/
 
@@ -6367,7 +6368,6 @@ margin: 0;
 .menucontainer {
   border-top:1px dotted #d1d1d1;
   border-bottom:1px dotted #d1d1d1;
-  background-color:violet;
 }
 .pagecontainer aside {
   background-color:#fff;
@@ -7397,6 +7397,17 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
 
   }
+  
+  /* Target iPad Landscape */
+  @media only screen 
+and  /*!YUI Compressor*/ (min-device-width : 768px) 
+and  /*!YUI Compressor*/ (max-device-width : 1024px) 
+and  /*!YUI Compressor*/ (orientation : landscape){
+	#slideshow .orbit-container .orbit-caption{
+		top:80px;
+		width: 300px;
+	}
+}
 
   /*---Large phone---*/
   @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
