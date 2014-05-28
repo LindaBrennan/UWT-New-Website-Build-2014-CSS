@@ -5831,7 +5831,7 @@ a.BBLinkHelpIcon {
 .BBDocumentFormTable{ display: none;}
 .BBDocumentFormTable.complete{display: block;}
 .BBDocumentFormTable.complete .adminInfo{display: none;}
-
+.BBDocumentFormTable.complete.admin .adminInfo{display: block;}
 
 /*END DOCUMENTS UPLOADER PART*/
 
