@@ -7310,9 +7310,6 @@ form[action*="pagedesign"] #orbitGuide {
 }
 #slideshow ul li:first-child { 
   display: block;
-  width:1000px;
-  height:544px;
-  /*margin-left:-1rem;*/
 }
 /* Reset image display property after js "kicks-in"*/
 #slideshow .orbit-container ul li { 
@@ -7382,10 +7379,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 
   /*---Tablet ---*/
   @media (min-width: 640px) and /*!YUI Compressor*/ (max-width : 1024px) {
-
-  .orbit-container {
-      border:2px solid pink; 
-    }
+  
     /*Return to original caption overlay position*/
     .orbit-container .orbit-slides-container > * .orbit-caption {
       background-color: #fff;      
@@ -7406,10 +7400,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 
   /*---Large phone---*/
   @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
-
-    .orbit-container { 
-      border:1px solid purple; 
-    }
+    
     .orbit-container .orbit-slides-container .orbit-caption {
       background-color: #fff;
       color: #000;      
@@ -7426,10 +7417,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 
   /*---Small phone---*/
   @media (max-width : 480px) {
-
-    .orbit-container { 
-      border:2px solid gold; 
-    }
+    
     .orbit-container .orbit-slides-container .orbit-caption {
       background-color: #fff;
       color: #000;      
@@ -7441,9 +7429,22 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     #slideshow .orbit-container .orbit-caption {
       padding: 0.5rem;
     }
-    /*Hide prev/next arrows*/    
-    a.orbit-next, a.orbit-prev {
-      display:none;
+    /*Move the arrows up into the image area on small devices*/
+    #slideshow .orbit-container .orbit-prev > span, .orbit-container .orbit-next > span {
+      margin-top:0rem;
+    }
+    #slideshow .orbit-container a.orbit-prev, 
+    #slideshow .orbit-container a.orbit-prev:visited, 
+    #slideshow .orbit-container a.orbit-next, 
+    #slideshow .orbit-container a.orbit-next:visited {
+      margin-top:-5rem; 
+    }
+    /*Reduce the size of the arrows for small devices*/
+    #slideshow .orbit-container .orbit-next > span {
+      border-width: 10px 0 10px 10px;
+    }
+    #slideshow .orbit-container .orbit-prev > span {
+      border-width: 10px 10px 10px 0;
     }
 
   }
@@ -7499,40 +7500,70 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 }
 /*--Orbit slideshow on home page of Annual Report microsite--*/
 
-/* Display only the first image before js "kicks-in"*/
-#slideshow .annual-report ul li { 
-  display: none;
-}
-#slideshow .annual-report ul li:first-child { 
-  display: block;
-}
-/* Reset image display property after js "kicks-in"*/
-#slideshow .annual-report .orbit-container ul li { 
-  display: block;
-}
-/*Hide the slide number selector (dots under slider)*/
-#slideshow .orbit-container .orbit-bullets {
-  display:block;
-  background-color:red;
-}
- 
-
 #slideshow .annual-report .orbit-container .orbit-slides-container > * .orbit-caption {
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(51, 51, 51, 0.3);
   border-radius: 0;
-  position: relative;
-  left: 40rem;    
-  top: -30.5rem;
+  position: absolute;
+  right: 0;    
+  top: 0;
   width: 31%;
-  /*bottom: 0;*/
-  color: lime;
-  font-size: 0.875rem;
-  padding: 0.625rem 0.875rem;
-  /*position: absolute;*/
-  /*width: 100%;*/
+  color: #fff;
+  font-size: 1rem;
+  padding:1rem;  
 }
+.annual-report {
+  margin-bottom:1.5rem;
+}
+/*---Large phone---*/
+  @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
 
+    #slideshow .annual-report .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;      
+      width: 98%;
+    }
+    #slideshow .annual-report .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }
 
+  }
+
+/*---Small phone---*/
+  @media (max-width : 480px) {
+
+    #slideshow .annual-report .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;
+      width: 98%;
+    }
+    #slideshow .annual-report .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    } 
+    /*Move the arrows up into the image area on small devices*/
+    #slideshow .annual-report .orbit-container .orbit-prev > span, .orbit-container .orbit-next > span {
+      margin-top:0rem;
+    }
+    #slideshow .annual-report .orbit-container a.orbit-prev, 
+    #slideshow .annual-report .orbit-container a.orbit-prev:visited, 
+    #slideshow .annual-report .orbit-container a.orbit-next, 
+    #slideshow .annual-report .orbit-container a.orbit-next:visited {
+      margin-top:-5rem; 
+    }
+    /*Reduce the size of the arrows for small devices*/
+    #slideshow .annual-report .orbit-container .orbit-next > span {
+      border-width: 10px 0 10px 10px;
+    }
+    #slideshow .annual-report .orbit-container .orbit-prev > span {
+      border-width: 10px 10px 10px 0;
+    }
+    
+   
+
+  }
 
 
 
