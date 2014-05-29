@@ -6143,14 +6143,14 @@ margin: 0;
     color:#000;
   }  
   .sm-simple a.has-submenu {
-    padding-right:2rem;
+    /*padding-right:2rem;*/
   }
   /*Reduce padding to right of top-level menu items only*/
   .sm-simple > li > a.has-submenu {
-    padding-right:0.8rem;    
+    /*padding-right:0.8rem;  */ 
   }
   .sm-simple ul a.has-submenu {
-    padding-right:1rem;
+   /* padding-right:1rem;*/
   }
   .sm-simple > li > a {
     text-transform: uppercase;
@@ -6367,7 +6367,6 @@ margin: 0;
 .menucontainer {
   border-top:1px dotted #d1d1d1;
   border-bottom:1px dotted #d1d1d1;
-  background-color:violet;
 }
 .pagecontainer aside {
   background-color:#fff;
@@ -7306,18 +7305,18 @@ form[action*="pagedesign"] #orbitGuide {
   display: none;
 }
 #slideshow ul li:first-child { 
-  display: block;
+  display: block;  
 }
 /* Reset image display property after js "kicks-in"*/
 #slideshow .orbit-container ul li { 
   display: block;
 }
+
 .orbit-container{
   overflow: hidden;
   width: 100%;
   position: relative;
   max-height:543px;/*Prevent extra space under slideshow*/
-  border:2px solid red; 
 }
 /*Hide the slide number selector (dots under slider)*/
 .orbit-container .orbit-bullets {
@@ -7390,8 +7389,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
       bottom: 0;
       width: 100%;      
       min-height:7rem;
-    }
-    
+    }    
     #slideshow .orbit-container .orbit-caption {
       padding: 0.5rem;
     }
@@ -7408,13 +7406,15 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
       background-color: #fff;
       color: #000;      
       position:relative;
-      top:-1rem;
-      left:0;
+      /*top:-1rem;
+      left:0;*/
+      bottom:0;
       width: 98%;
+      font-size: 1rem;
     }
     #slideshow .orbit-container .orbit-caption {
       padding: 0.5rem;
-    } 
+    }
 
   }
 
@@ -7428,16 +7428,16 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
       background-color: #fff;
       color: #000;      
       position:relative;
-      top:-1rem;
-      left:0;
+      /*top:-1rem;
+      left:0;*/
+      bottom:0;
       width: 98%;
+      font-size: 1rem;
+      padding-top:0;
+      margin-top:0;
     }
     #slideshow .orbit-container .orbit-caption {
       padding: 0.5rem;
-    }
-    /*Hide prev/next arrows*/    
-    a.orbit-next, a.orbit-prev {
-      display:none;
     }
 
   }
@@ -7481,14 +7481,77 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
   font-weight: bold;
   padding: 0.5rem 0.88rem 0.5rem 0;
 }
-/*Add padding back into submenu items*/
+/*Add menu padding back into submenu items*/
 .annual-report ul li[class*='menuItem'] {
   padding-left:0.5rem;
 }
-
+/*Fix menu padding for smaller devices*/
 @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
   .annual-report a {    
     padding-left: 1rem;    
   }
 }
+/*--Orbit slideshow on home page of Annual Report microsite--*/
+
+/*#slideshow .annual-report .orbit-container .orbit-slides-container > * .orbit-caption {
+  background-color: rgba(51, 51, 51, 0.3);
+  border-radius: 0;
+  position: relative;
+  left: 40rem;    
+  top: -34rem;
+  width: 31%;
+  color: #fff;
+  font-size: 1rem;  
+}*/
+#slideshow .annual-report .orbit-container .orbit-slides-container > * .orbit-caption {
+  background-color: rgba(51, 51, 51, 0.3);
+  border-radius: 0;
+  position: absolute;
+  right: 0;    
+  top: 0;
+  width: 31%;
+  color: #fff;
+  font-size: 1rem;
+  padding:1rem;  
+}
+
+/*---Large phone---*/
+  @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
+
+    #slideshow .annual-report .orbit-container { 
+      border:1px solid aqua; 
+    }
+    #slideshow .annual-report .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;      
+      width: 98%;
+    }
+    #slideshow .annual-report .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }
+
+  }
+
+  /*---Small phone---*/
+  @media (max-width : 480px) {
+
+    #slideshow .annual-report .orbit-container { 
+      border:2px solid brown; 
+    }
+    #slideshow .annual-report .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;
+      width: 98%;
+    }
+    #slideshow .annual-report .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }   
+
+  }
+
+
 /*-----------END 6. Annual Report microsite styles-----------*/
