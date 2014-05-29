@@ -1,19 +1,20 @@
 /*--------Table of Contents--------
 
-1. Foundation Simple Sytles
-2. UWT Styles
+1. Foundation Simple Styles
+2. SmartMenus
+3. UWT Styles
 -----------------------------------*/ 
 
-/* 1. Foundation Sytles
+/* 1. Foundation Styles
 ====================================================================
- Foundation sytles are created to make our site look "nice"
+ Foundation styles are created to make our site look "nice"
  in older versions of IE.
 --------------------------------------------------------------------
  April, 18 2014 - Harrison Created styles
 -------------------------------------------------------------------- 
 */
 
-/* Make aure off canvas is hidden */
+/* Make sure off canvas is hidden */
 .left-off-canvas-menu{
 	width: 0\0/;	
 }
@@ -31,7 +32,6 @@
 #header .small-12{
 	width: 100%;
 }
-
 #header .large-3{
 	width: 30%;
 }
@@ -44,6 +44,15 @@
 #landingcontent .large-9{
 	width: 75%
 }
+#contentbuckets .large-4{
+	width: 33.33%;
+}
+@media (max-width: 640px){
+	#contentbuckets .large-4{
+		width: 100%!important;
+	}
+}
+
 /* ie-foundation-fix is added on window resize event with javascript */
 .ie-foundation-fix #header .small-12.large-3{
 	width: 100%;
@@ -51,7 +60,6 @@
 .ie-foundation-fix #smallmenu .small-2{
 	width: 10%;
 }
-
 .ie-foundation-fix #smallmenu .small-5{
 	width: 30%;
 }
@@ -61,8 +69,20 @@
 .ie-foundation-fix #landingcontent .small-12.large-9{
 	width: 100%;
 }
+/* Orbit */
+.orbit-caption{
+	display: none;
+}
 
-/* 2. UWT Sytles
+
+/* 2. SmartMenus
+====================================================================
+*/
+
+/* Hide iFrame created by the plugin */
+.sm-simple iframe{display: none;}
+
+/* 3. UWT Sytles
 ====================================================================
 */
 
