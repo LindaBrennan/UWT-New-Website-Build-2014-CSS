@@ -6232,7 +6232,6 @@ margin: 0;
     left: 17%;   
   }
 
-
 /*Responsiveness -
   These will make the sub menus collapsible when the screen width is small.*/
   @media screen and  /*!YUI Compressor*/ (max-width: 1024px) {
@@ -7511,7 +7510,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
   font-size: 1rem;
   padding:1rem;  
 }
-.annual-report {
+#content .annual-report {
   margin-bottom:1.5rem;
 }
 /*---Large phone---*/
@@ -7559,15 +7558,10 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
     #slideshow .annual-report .orbit-container .orbit-prev > span {
       border-width: 10px 10px 10px 0;
-    }
-    
+    }  
    
 
   }
-
-
-
-
 
 
 /*-----------END 6. Annual Report microsite styles-----------*/
