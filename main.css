@@ -30,13 +30,13 @@ src:url("document.doc?id=12");
 src:url("document.doc?id=12?#iefix") format("embedded-opentype"),url("document.doc?id=13") format("woff"),url("document.doc?id=14") format("truetype"),url("document.doc?id=15") format("svg");
 }
 
-/*@font-face{
+@font-face{
 font-family:"Avenir LT W01 85 Heavy";
-src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot");
-src:url("Fonts/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("embedded-opentype"),url("Fonts/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("Fonts/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("Fonts/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
+src:url("document.doc?id=35");
+src:url("document.doc?id=35?#iefix") format("embedded-opentype"),url("document.doc?id=36") format("woff"),url("document.doc?id=37") format("truetype"),url("document.doc?id=38") format("svg");
 }
 
-@font-face{
+/*@font-face{
 font-family:"AvenirLTW01-85HeavyObli";
 src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot");
 src:url("Fonts/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("embedded-opentype"),url("Fonts/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("Fonts/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("Fonts/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
@@ -5955,9 +5955,12 @@ a, a:visited {
   color:#0072ce;
   border-bottom:dotted 1px #0072ce;
 }
-a:hover, a:focus, a:visited:hover {
+a:hover, a:visited:hover, a:active {
   color: #da291c;
   border-bottom:solid 1px #da291c; 
+}
+a:focus {
+  border:solid 2px lime;
 }
 a img {
   border: none; 
@@ -6013,11 +6016,14 @@ a.readmore-white {
   color:#fff;
   background-image: url('Image/MainWebsite/X_Common/chevron-white.png');
 }
-a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen {
+a:hover.readmore-blue, a:hover.readmore-red, a:hover.readmore-yellow, a:hover.readmore-darkblue, a:hover.readmore-lightgreen,
+a:focus.readmore-blue, a:focus.readmore-red, a:focus.readmore-yellow, a:focus.readmore-darkblue, a:focus.readmore-lightgreen,
+a:active.readmore-blue, a:active.readmore-red, a:active.readmore-yellow, a:active.readmore-darkblue, a:active.readmore-lightgreen
+ {
   color:#da291c;
   text-decoration:underline;
 }
-a:hover.readmore-white {
+a:hover.readmore-white, a:focus.readmore-white, a:active.readmore-white{
   color:#fff;
   text-decoration:underline;
 }
@@ -6413,10 +6419,10 @@ div.smallemail a {
   text-transform: uppercase;
   padding:0;
 }
-div.smallemail a:hover {
+div.smallemail a:hover, div.smallemail a:focus, div.smallemail a:active {
   color:#fff;
 }
-div:hover.smallemail {
+div:hover.smallemail, div:focus.smallemail, div:active.smallemail {
   background:#da291c;
   color:#fff;
 }
@@ -6453,7 +6459,7 @@ div:active.smallemail {
   position:relative;
   top:0.2rem;  
 }
-.login a:hover {
+.login a:hover, .login a:focus, .login a:active {
   color:#da291c;
   text-decoration:underline;
 }
@@ -6638,7 +6644,7 @@ div#headerbtns {
   color:#fff;
   font-size:0.9rem;
 }
-#footer1 a:hover {
+#footer1 a:hover, #footer1 a:focus, #footer1 a:active {
   text-decoration:underline;
   color:#fff;
 }
@@ -6646,7 +6652,7 @@ div#headerbtns {
   text-decoration:none;
   color:#fff;
 }
-#footer1 a:visited:hover {
+#footer1 a:visited:hover, #footer1 a:visited:focus, #footer1 a:visited:active {
   text-decoration:underline;
   color:#fff;
 }
@@ -6670,7 +6676,7 @@ ul.socmed li {
   color:#a9abac;
   font-size:0.8rem;
 }
-#footer2 a:hover {
+#footer2 a:hover, #footer2 a:focus, #footer2 a:active {
   text-decoration:underline;
   color:#fff;
 }
@@ -6678,7 +6684,7 @@ ul.socmed li {
   text-decoration:none;
   color:#a9abac;
 }
-#footer2 a:visited:hover {
+#footer2 a:visited:hover, #footer2 a:visited:focus, #footer2 a:visited:active {
   text-decoration:none;
   color:#fff;
 }
@@ -6760,7 +6766,7 @@ div.landingcontent {
 }
 .firstbucket {
   border-right: dotted 1px #d1d1d1;
-  min-height:32rem;
+  /*min-height:32rem;*/
 }
 .sidebar-item-bkgd {
   background-color: #da291c;
@@ -6837,7 +6843,7 @@ div.landingcontent {
 .sidebar .sm-simple > li > a {
   color:#fff;
 }
-.sidebar .sm-simple > li > a:hover {
+.sidebar .sm-simple > li > a:hover, .sidebar .sm-simple > li > a:focus, .sidebar .sm-simple > li > a:active {
   color:#fff;
 }
 .sidebar .sm-simple a:hover, .sidebar .sm-simple a:focus, .sidebar .sm-simple a:active, .sidebar .sm-simple a.highlighted {
@@ -6943,7 +6949,8 @@ span.exec-title {
  border-bottom: 1px dotted #000;
  font-size:0.8rem;
 }
-.sidebarinner .sidebar-list a:hover, .sidebar-list a:visited:hover {
+.sidebarinner .sidebar-list a:hover, .sidebarinner .sidebar-list a:focus, .sidebarinner .sidebar-list a:active,
+.sidebar-list a:visited:hover, .sidebar-list a:visited:focus, .sidebar-list a:visited:active {
  border-bottom: 1px solid #000;
 }
   /*Small device changes for List Sidebar Items*/
@@ -7062,7 +7069,8 @@ p.sidebar-logo {
   border-bottom: 1px dotted #fff;
   color:#fff;
 }
-.sidebar-report .inner p a:hover, .sidebar-report .inner p a:visited:hover {  
+.sidebar-report .inner p a:hover, .sidebar-report .inner p a:focus, .sidebar-report .inner p a:active,
+.sidebar-report .inner p a:visited:hover, .sidebar-report .inner p a:visited:focus, .sidebar-report .inner p a:visited:active {  
   border-bottom: 1px solid #fff;
 }
 .sidebar-report p.chevron {
@@ -7105,7 +7113,7 @@ p.sidebar-logo {
   border-bottom: 1px dotted #54585a;
   color:#54585a;
 }
-.sidebar-logotext .inner p a:hover, .sidebar-logotext .inner p a:visited:hover {  
+.sidebar-logotext .inner p a:hover, .sidebar-logotext .inner p a:focus, .sidebar-logotext .inner p a:active, .sidebar-logotext .inner p a:visited:hover, .sidebar-logotext .inner p a:visited:focus, .sidebar-logotext .inner p a:visited:active {  
   border-bottom: 1px solid #54585a;
 }
 .sidebar-logotext p.chevron {
@@ -7151,7 +7159,7 @@ p.sidebar-logo {
   color:#54585a;
   font-si
 }
-.sidebar-pagelink .inner p a:hover, .sidebar-pagelink .inner p a:visited:hover {  
+.sidebar-pagelink .inner p a:hover, .sidebar-pagelink .inner p a:focus, .sidebar-pagelink .inner p a:active, .sidebar-pagelink .inner p a:visited:hover, .sidebar-pagelink .inner p a:visited:focus, .sidebar-pagelink .inner p a:visited:active {  
   border-bottom: 1px solid #54585a;
 }
 .sidebar-pagelink p.chevron {
@@ -7185,6 +7193,7 @@ p.sidebar-logo {
   color:#0072ce;
   display:block;
   margin-bottom:0.3rem;
+  font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif;   
 }
 .sidebar-info p a {
   font-size:0.75rem;
@@ -7239,7 +7248,7 @@ p.sidebar-logo {
   border-bottom: 1px dotted #54585a;
   color:#54585a;
 }
-.sidebar-socialmedia p a:hover, .sidebar-socialmedia p a:visited:hover {  
+.sidebar-socialmedia p a:hover, .sidebar-socialmedia p a:focus, .sidebar-socialmedia p a:active, .sidebar-socialmedia p a:visited:hover, .sidebar-socialmedia p a:visited:focus, .sidebar-socialmedia p a:visited:active {  
   border-bottom: 1px solid #54585a;
 }
 .sidebar-socialmedia p.chevron {
@@ -7451,7 +7460,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 /*--END ORBIT STYLES --*/
 
 /*--ACCORDION STYLES--*/
-.accordion-part a, .accordion-part a:hover {
+.accordion-part a, .accordion-part a:hover, .accordion-part a:focus, .accordion-part a:active {
   border-bottom:1px #ddd solid;
 }
 /*--END ACCORDION STYLES--*/
@@ -7558,10 +7567,15 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
     #slideshow .annual-report .orbit-container .orbit-prev > span {
       border-width: 10px 10px 10px 0;
-    }  
+    }
+    
    
 
   }
+
+
+
+
 
 
 /*-----------END 6. Annual Report microsite styles-----------*/
