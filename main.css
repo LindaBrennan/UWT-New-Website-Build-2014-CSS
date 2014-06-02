@@ -5249,6 +5249,13 @@ border: 0;
 margin-bottom: 0;
 border: 0;
 }
+/*Hide the word Search when the user types in the field*/
+.QuickSearchFormTable input[type="text"]:focus {
+/*background-color:lime;
+color:transparent;*/
+}
+
+
 /*END QUICK SEARCH*/
 
 /*DONATION FORM*/
@@ -5650,7 +5657,6 @@ a.BBLinkHelpIcon {
 /*Reduce size of Step 4 H2 heading*/
 .EventTable h2 {
   font-size:2rem;
-  color:lime;
 }
 /*Remove grey background behind labels on Step 4*/
 .EventTable .BBEventConfirmation label.BBFieldCaption {
@@ -5960,7 +5966,11 @@ a:hover, a:visited:hover, a:active {
   border-bottom:solid 1px #da291c; 
 }
 a:focus {
-  border:solid 2px lime;
+  background:#ddd;
+  color:#000 !important;
+}
+a#menubtn:focus {
+  border: 0;  
 }
 a img {
   border: none; 
@@ -6429,6 +6439,10 @@ div:hover.smallemail, div:focus.smallemail, div:active.smallemail {
 div:active.smallemail {
   background:#333333;
  /*box-shadow: #fff 0px 2px 3px;*/
+}
+/*Remove shadow above content area when off canvas small menu displays*/
+.move-right a.exit-off-canvas {
+  box-shadow: -4px 0 4px rgba(0, 0, 0, 0), 4px 0 4px rgba(0, 0, 0, 0);
 }
 /*--END MAIN NAV--*/
 
