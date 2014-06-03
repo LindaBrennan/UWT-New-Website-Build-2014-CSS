@@ -5254,9 +5254,68 @@ border: 0;
 /*background-color:lime;
 color:transparent;*/
 }
-
-
 /*END QUICK SEARCH*/
+
+/*SEARCH RESULTS PAGE*/
+table.SearchFormTable, table.SearchFormTable table {
+  border:0;
+}
+input.SearchButton {
+  background-color:#54585a;
+  border:0;
+  color:#fff;
+  padding:0.1rem 0.2rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;  
+  border-radius:5px;
+  margin-bottom:1rem;
+}
+input.SearchTextBox {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;  
+  border-radius:5px;  
+}
+table.SearchFormTable {
+  margin-bottom:0;
+}
+table.SearchFormTable table td {
+  padding: 0 0.5rem 0 0;
+}
+table.SearchFormTable td {
+  padding-bottom:0;
+}
+tr.SearchOddRowStyle td.BBSearchDescriptionStyle {
+  background-color:#fff;
+}
+tr.SearchEvenRowStyle td.BBSearchDescriptionStyle {
+  background-color:#fff;
+}
+table.SearchTable tr.SearchHeaderRow td {
+  font-size:1.1rem;
+  padding-bottom:1rem;
+}
+tr.SearchHeaderRow td span {
+  padding-bottom:3rem;
+}
+table.SearchTable tr.SearchEvenRowStyle td,
+table.SearchTable tr.SearchOddRowStyle td
+ {
+  padding-top:1rem;
+}
+table.SearchTable tr.SearchEvenRowStyle td a,
+table.SearchTable tr.SearchOddRowStyle td a
+ {
+  font-weight:bold;
+}
+table.SearchTable tr.SearchEvenRowStyle td.BBSearchDescriptionStyle, 
+table.SearchTable tr.SearchOddRowStyle td.BBSearchDescriptionStyle {
+  border-bottom:2px solid #ddd;
+  white-space:normal;
+  padding-bottom:1rem;
+}
+
+
+/*END SEARCH RESULTS PAGE*/
 
 /*DONATION FORM*/
 
