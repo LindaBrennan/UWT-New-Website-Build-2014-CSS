@@ -6159,12 +6159,19 @@ margin: 0;
   margin-right:1rem;
   float:left;
 }
-
-/*Add PDF icon after all PDF links*/
-/*a[href$=".pdf"]:after { 
-  content: " <img src='' alt='PDF' />"; 
-}*/
-
+/*Alphabeticized anchor links- for example, at top of Honour Roll pages*/
+ul.alphalist {
+  list-style-type:none;
+  margin-left:0;
+}
+ul.alphalist li {
+  display: inline;
+  padding-right:0.5rem;
+  font-size:1.2rem;
+}
+ul.alphalist li a:hover, ul.alphalist li a:focus, ul.alphalist li a:active {
+  background-color:#ddd;
+}
 /*--END CROSS-SITE STYLES--*/
 
 
@@ -6511,6 +6518,27 @@ div:active.smallemail {
 #content{ z-index:1;}
 #nav{ z-index:2;}
 
+.addthis-container {
+  margin-bottom: 1rem; 
+  vertical-align: middle; 
+  margin-left: 1.9rem;
+}
+.addthis-container a {
+  border-bottom:0;
+}
+.addthis-content {
+  float:left; 
+  margin-right:0.5rem; 
+  margin-top: 0.5rem;
+}
+/*Small devices: Move "Share this story" to above the sharing buttons*/
+  @media (max-width : 480px) {
+    .addthis-content {
+      float:none; 
+      margin-bottom:0.5rem;
+    } 
+  }
+
 /*--HOME PAGE--*/
 #utility {
   background-color: #54585a;
@@ -6569,20 +6597,6 @@ a#twooneone {
   color:#fff;
   text-transform: uppercase;
 }
-
-/*#smallmenu .donatebtncolumn #donatebtn p { 
-  background-color:#da291c;  
-  width:7.2rem;
-  padding:0.5rem;
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px;
-}*/
-/*#smallmenu .donatebtncolumn #donatebtn p a {
-  font-size:0.9rem;
-  color:#fff;
-  text-transform: uppercase;
-}*/
 .smallmenuitems {
   margin-right:1rem; 
 }
@@ -6611,10 +6625,9 @@ div#headerbtns {
   border-radius: 5px;
   background: #54585a;
   position: relative;
-  /*box-shadow: #666 0px 2px 3px;*/
   text-transform: uppercase;
   font-weight: bold;  
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;
   behavior: url(pie/PIE.htc);
 }
 .joinemailbtn a {
@@ -6629,12 +6642,11 @@ div#headerbtns {
   border-radius: 5px;
   background: #da291c;
   position: relative;
-  /*box-shadow: #666 0px 2px 3px;*/
   text-transform: uppercase;
   font-weight: bold;
   font-size:0.8rem;
   margin-left:1rem;
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;
   behavior: url(pie/PIE.htc);
 }
 #headerbtns .donatebtn a {
@@ -6680,7 +6692,7 @@ div#headerbtns {
   -webkit-border-radius: 0 0 10px 0; 
   -moz-border-radius: 0 0 10px 0; 
   border-radius: 0 0 10px 0; 
-  position:relative;/*Needed for PIE to work. See: http://css3pie.com/documentation/known-issues/*/
+  position:relative;
   behavior: url(pie/PIE.htc);
 }
 #contentbuckets h2.darkblue-background {
@@ -6768,8 +6780,6 @@ div.copyright {
 .copyright p {
   font-size:0.8rem;
 }
-
-
 /*--END HOME PAGE--*/
 
 /*--LANDING PAGE--*/
@@ -6951,6 +6961,75 @@ div.landingcontent {
 ul.sm ul.sm-nowrap > li > a {
     white-space: normal;
 }
+
+/*--Orbit slideshow on landing page, e.g., Supporters page--*/
+
+#slideshow .landing-page .orbit-container .orbit-slides-container > * .orbit-caption {
+  /*background-color: rgba(51, 51, 51, 0.3);*/
+  background-color: lime;
+  border-radius: 0;
+  position: relative;
+  /*right: 0px; 
+  top: 0px;*/
+  bottom:0;
+  width: 30%;
+  /*color: #fff;*/
+  color:red;
+  font-size: 1rem;
+  padding: 1rem;  
+}
+#content .landing-page {
+  margin-bottom:1.5rem;
+}
+/*---Large phone---*/
+  @media (min-width: 480px) and /*!YUI Compressor*/ (max-width : 640px) {
+
+    #slideshow .landing-page .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;      
+      width: 98%;
+    }
+    #slideshow .landing-page .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    }
+
+  }
+
+/*---Small phone---*/
+  @media (max-width : 480px) {
+
+    #slideshow .landing-page .orbit-container .orbit-slides-container .orbit-caption {
+      background-color: #fff;
+      color: #000;      
+      position:relative;
+      bottom:0;
+      width: 98%;
+    }
+    #slideshow .landing-page .orbit-container .orbit-caption {
+      padding: 0.5rem;
+    } 
+    /*Move the arrows up into the image area on small devices*/
+    #slideshow .landing-page .orbit-container .orbit-prev > span, .orbit-container .orbit-next > span {
+      margin-top:0rem;
+    }
+    #slideshow .annual-report .orbit-container a.orbit-prev, 
+    #slideshow .annual-report .orbit-container a.orbit-prev:visited, 
+    #slideshow .annual-report .orbit-container a.orbit-next, 
+    #slideshow .annual-report .orbit-container a.orbit-next:visited {
+      margin-top:-5rem; 
+    }
+    /*Reduce the size of the arrows for small devices*/
+    #slideshow .landing-page .orbit-container .orbit-next > span {
+      border-width: 10px 0 10px 10px;
+    }
+    #slideshow .landing-page .orbit-container .orbit-prev > span {
+      border-width: 10px 10px 10px 0;
+    }
+
+  }
+
 /*--END LANDING PAGE--*/
 
 /*--DETAILS PAGE--*/
@@ -7341,6 +7420,61 @@ p.sidebar-logo {
 
 /*--END SIDEBAR ITEMS--*/
 
+/*--HONOUR ROLL--*/
+.landingcontent .honourroll {
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch; 
+  max-height:50rem;
+}
+ul.twocolumn {
+  margin-bottom:1rem;
+}
+ul.twocolumn li {
+  width:50%;
+  float:left;
+  display:inline;
+  padding-right:0.5rem;
+}
+ul.twocolumn li ul li {
+  width:100%;  
+  display:block;
+}
+ul.threecolumn li {
+  width:33.33%;
+  float:left;
+  display:inline;
+  padding-right:0.5rem;
+}
+.landingcontent table {
+  border:0;
+  width:50%;
+}
+
+/*Reduce number of columns for tablets and phones*/
+  @media (max-width : 640px) {
+    
+    ul.threecolumn li, ul.twocolumn li {
+      width:100%;
+    }
+    .landingcontent .honourroll {      
+      overflow-y:scroll;
+      -webkit-overflow-scrolling: touch;       
+      max-height:25rem;
+      margin-left:0.5rem;
+      margin-right:0.5rem;
+      border-top:1px solid #888;
+      border-bottom:1px solid #888;
+    }    
+  
+  }
+  @media (min-width: 640px) and /*!YUI Compressor*/ (max-width : 1024px) {
+    ul.threecolumn li {
+      width:50%;
+    }
+
+  }
+
+
 
 /*--MEDIA QUERY TO FIX SMALL THINGS THAT COULDN'T BE DONE EASILY OTHERWISE--*/
 
@@ -7396,7 +7530,6 @@ form[action*="pagedesign"] #orbitGuide {
 #slideshow .orbit-container ul li { 
   display: block;
 }
-
 .orbit-container{
   overflow: hidden;
   width: 100%;
@@ -7582,7 +7715,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
 /*--Orbit slideshow on home page of Annual Report microsite--*/
 
 #slideshow .annual-report .orbit-container .orbit-slides-container > * .orbit-caption {
-  background-color: rgba(51, 51, 51, 0.3);
+  background-color: rgba(51, 51, 51, 0.7);
   border-radius: 0;
   position: absolute;
   right: 0;    
@@ -7590,7 +7723,8 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
   width: 31%;
   color: #fff;
   font-size: 1rem;
-  padding:1rem;  
+  padding:1rem; 
+  padding-top:3rem;
 }
 #content .annual-report {
   margin-bottom:1.5rem;
@@ -7623,6 +7757,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
     #slideshow .annual-report .orbit-container .orbit-caption {
       padding: 0.5rem;
+      padding-top:0;
     } 
     /*Move the arrows up into the image area on small devices*/
     #slideshow .annual-report .orbit-container .orbit-prev > span, .orbit-container .orbit-next > span {
@@ -7632,7 +7767,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     #slideshow .annual-report .orbit-container a.orbit-prev:visited, 
     #slideshow .annual-report .orbit-container a.orbit-next, 
     #slideshow .annual-report .orbit-container a.orbit-next:visited {
-      margin-top:-5rem; 
+      margin-top:-10rem; 
     }
     /*Reduce the size of the arrows for small devices*/
     #slideshow .annual-report .orbit-container .orbit-next > span {
@@ -7640,15 +7775,7 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
     #slideshow .annual-report .orbit-container .orbit-prev > span {
       border-width: 10px 10px 10px 0;
-    }
-    
-   
+    }  
 
   }
-
-
-
-
-
-
 /*-----------END 6. Annual Report microsite styles-----------*/
