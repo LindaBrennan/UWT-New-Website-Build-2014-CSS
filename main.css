@@ -7096,6 +7096,10 @@ span.exec-title {
   list-style-type: none;
   margin-left:0;
 }
+.sidebarinner .sidebar-list ul li {
+  margin: 1.0rem 0;
+  line-height: 1.0rem;
+}
 .sidebarinner .sidebar-list a, .sidebar-list a:visited {
  color:#000; 
  border-bottom: 1px dotted #000;
@@ -7426,6 +7430,14 @@ p.sidebar-logo {
   -webkit-overflow-scrolling: touch; 
   max-height:50rem;
 }
+.landingcontent .honourroll h2 {
+  background-color:#da291c;
+  border-radius: 0 0 10px;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  padding: 0 0 0 1rem;
+  text-transform: uppercase;
+}
 ul.twocolumn {
   margin-bottom:1rem;
 }
@@ -7448,6 +7460,13 @@ ul.threecolumn li {
 .landingcontent table {
   border:0;
   width:50%;
+}
+.back-to-top {
+  float: right; 
+  font-size: 0.75em; 
+  color: #000; 
+  text-decoration: none; 
+  font-weight: bold;
 }
 
 /*Reduce number of columns for tablets and phones*/
