@@ -1,7 +1,7 @@
 /*--------Table of Contents--------
 
 1. Fonts
-2. Foundation media queries and styles
+2. Foundation media quersideitemies and styles
 3. BBIS part styles
 4. UWT styles
       CROSS-SITE STYLES TO OVERWRITE FOUNDATION STYLES
@@ -5990,6 +5990,7 @@ h3 {
   font-size:1.1rem;
   font-weight:bold;
   color:#777;
+  line-height:1.3rem;
 }
 p.darkbluetext {
   color:#0072ce;
@@ -6011,9 +6012,12 @@ p.large {
   margin:0;
 }
 span.infographic-darkblue {  
-  font-size:7rem;
+  font-size:6.5rem;
   display:block;
-  margin:3rem 0 1.5rem 0;  
+  margin:3rem 0 1.5rem 0; 
+  font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: -0.2rem; 
+
 }
 /*Set the default style for links*/
 a, a:visited {
@@ -6538,6 +6542,19 @@ div:active.smallemail {
       margin-bottom:0.5rem;
     } 
   }
+.register-now {
+  font-size:1.3rem;
+  font-weight:bold;
+  padding-top:0;
+  margin-top:0;
+  margin-bottom:2.5rem;
+}
+h3.cntower {
+  font-size:1.5rem;
+  color:#e35205;
+  font-weight:bold; 
+  margin-top:1rem; 
+}
 
 /*--HOME PAGE--*/
 #utility {
@@ -6792,6 +6809,7 @@ div.copyright {
 }
 div.sidebar {
   padding-top:1rem;
+  /*border-right:1px dotted #d1d1d1;*/
 }
 /*Add border with bottom right corner border radius to sidebar item*/
 .sidebarinner {
@@ -6812,21 +6830,26 @@ div.sidebar {
   border-bottom:1px dotted #d1d1d1; 
   padding:1rem 1rem 0 1rem;
 }
+.sideitem {
+  /*border-left:1px dotted #d1d1d1;*/
+}
 .sideitem .sideitem-notop {
   border-top:0;
-  padding-top:0;
+  /*padding-top:0;*/
+  padding-top:1rem;
+  border-bottom:0;
 }
 .sideitem .sideitem-last {
   border-bottom:0;
 }
 .sideitem .sidebarinner p {
   font-size:1.0rem;
-  font-weight:bolder;
+  /*font-weight:bolder;*/
   color:#54585a;
 }
 .sideitem .sidebarinner p.red {
   font-size:1.0rem;
-  font-weight:bolder;
+  /*font-weight:bolder;*/
   color:#da291c;
 }
 .sideitem span {
@@ -7063,10 +7086,10 @@ span.exec-title {
 
 /*Text Only Sidebar Items - for example, charitable registration number*/
 .sidebarinner .sidebar-textonly p {
-  line-height:1.1rem;
-  font-size:0.75rem;
-  font-weight:bold;
+  line-height:1.0rem;
+  font-size:0.8rem;
   color:#797979;
+  font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif; 
 }
     /*Small device changes for Text Only Sidebar Items*/
     @media (max-width : 640px) {
@@ -7244,7 +7267,7 @@ p.sidebar-logo {
       }
     }
 
-/*Logo + Text Sidebar Items - for example, Community Matters*/
+/*Logo + Text Sidebar Items on white - for example, Community Matters*/
 .sidebar-logotext {
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
@@ -7275,9 +7298,6 @@ p.sidebar-logo {
 .sidebar-logotext p.chevron {
   text-align:right;
 }
-.sidebar-logotext .text-center {
-
-}
   /*Small device changes for Logo + Text Sidebar Items*/
     @media (max-width : 640px) {
       .sidebar-logotext .inner p {          
@@ -7291,6 +7311,58 @@ p.sidebar-logo {
         font-size:1.0rem;
       }
     }
+
+/*Logo + Text Sidebar Items on grey - for example, Imagine a City*/
+.sidebar-logotext-grey {
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+  background-color:#606060;
+  margin: 1rem 0 1rem 0;
+}
+.sidebar-logotext-grey .inner {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.sidebar-logotext-grey .inner p {
+  font-size:0.9rem;
+  line-height:1.5rem;   
+  margin-bottom:0;
+  color:#fff;
+  padding-top:0.5rem; 
+}
+.sidebar-logotext-grey .inner hr {
+  margin: 0.5rem 0 0.5rem 0;
+}
+.sidebar-logotext-grey .inner p a, .sidebar-logotext .inner p a:visited {
+  border-bottom: 1px dotted #fff;
+  color:#fff;
+}
+.sidebar-logotext-grey .inner p a:hover, .sidebar-logotext-grey .inner p a:focus, .sidebar-logotext-grey .inner p a:active, .sidebar-logotext-grey .inner p a:visited:hover, .sidebar-logotext-grey .inner p a:visited:focus, .sidebar-logotext-grey .inner p a:visited:active {  
+  border-bottom: 1px solid #fff;
+}
+.sidebar-logotext-grey .inner p.chevron a, .sidebar-logotext .inner p.chevron a:visited {
+  border-bottom: 0;
+}
+.sidebar-logotext-grey .inner p.chevron a:hover, .sidebar-logotext-grey .inner p.chevron a:focus, .sidebar-logotext-grey .inner p.chevron a:active, .sidebar-logotext-grey .inner p.chevron a:visited:hover, .sidebar-logotext-grey .inner p.chevron a:visited:focus, .sidebar-logotext-grey .inner p.chevron a:visited:active {  
+  border-bottom: 0;
+}
+
+.sidebar-logotext-grey p.chevron {
+  text-align:right;
+}
+  /*Small device changes for Logo + Text Sidebar Items*/
+    @media (max-width : 640px) {
+      .sidebar-logotext-grey .inner p {          
+          font-size:1.0rem;
+      }
+    }
+    /*Increase line spacing and font in iPhone landscape*/
+    @media (min-width : 320px) and /*!YUI Compressor*/ (max-width : 568px) and /*!YUI Compressor*/ (orientation : landscape) {
+      .sidebar-logotext-grey .inner p {
+        line-height:1.9rem;
+        font-size:1.0rem;
+      }
+    }    
 
 /*Page Link Sidebar Items - for example, Join Our Team*/
 .sidebar-pagelink {
@@ -7312,10 +7384,9 @@ p.sidebar-logo {
 }
 .sidebar-pagelink .inner p a, .sidebar-pagelink .inner p a:visited {
   border-bottom: 1px dotted #54585a;
-  color:#54585a;
-  font-si
+  color:#54585a;  
 }
-.sidebar-pagelink .inner p a:hover, .sidebar-pagelink .inner p a:focus, .sidebar-pagelink .inner p a:active, .sidebar-pagelink .inner p a:visited:hover, .sidebar-pagelink .inner p a:visited:focus, .sidebar-pagelink .inner p a:visited:active {  
+.sidebar-pagelink .inner p a:hover, #leftnav .sidebar-pagelink .inner p a:focus, #leftnav .sidebar-pagelink .inner p a:active, #leftnav .sidebar-pagelink .inner p a:visited:hover, #leftnav .sidebar-pagelink .inner p a:visited:focus, #leftnav .sidebar-pagelink .inner p a:visited:active {  
   border-bottom: 1px solid #54585a;
 }
 .sidebar-pagelink p.chevron {
@@ -7324,6 +7395,19 @@ p.sidebar-logo {
 .sidebar-pagelink .logo {
   height:51px;
 }
+.landingcontent .sideitem .sidebar-pagelink .inner p a,
+.landingcontent .sideitem .sidebar-pagelink .inner p a:visited
+ {
+  border-bottom: 1px dotted #54585a;
+}
+.landingcontent .sideitem .sidebar-pagelink .inner p a:hover,
+.landingcontent .sideitem .sidebar-pagelink .inner p a:visited:hover,
+.landingcontent .sideitem .sidebar-pagelink .inner p a:focus,
+.landingcontent .sideitem .sidebar-pagelink .inner p a:active
+ {
+  border-bottom: 1px solid #54585a;  
+}
+
     /*Small device changes for Page Link Sidebar Items*/
     @media (max-width : 640px) {
       .sidebar-pagelink .inner p {          
@@ -7390,7 +7474,7 @@ p.sidebar-logo {
 
 /*Social Media Sidebar Items*/
 .sidebar-socialmedia { 
-  margin: 1rem 0 1rem 0;
+  margin: 0 0 1rem 0;
 }
 .sidebar-socialmedia p {
   font-size:0.9rem;
@@ -7400,7 +7484,7 @@ p.sidebar-logo {
   padding-top:0.5rem; 
   text-align:left;
 }
-.sidebar-socialmedia p a, .sidebar-socialmedia p a:visited {
+.sidebarinner .sidebar-socialmedia p a, .sidebarinner .sidebar-socialmedia p a:visited {
   border-bottom: 1px dotted #54585a;
   color:#54585a;
 }
@@ -7409,6 +7493,9 @@ p.sidebar-logo {
 }
 .sidebar-socialmedia p.chevron {
   text-align:right;
+}
+.sidebar-socialmedia p.chevron a {
+  border-bottom:0;
 }
     /*Small device changes for Page Link Sidebar Items*/
     @media (max-width : 640px) {
@@ -7436,7 +7523,6 @@ p.sidebar-logo {
   color: #FFFFFF;
   margin-bottom: 0.5rem;
   padding: 0 0 0 1rem;
-  text-transform: uppercase;
 }
 ul.twocolumn {
   margin-bottom:1rem;
@@ -7460,6 +7546,9 @@ ul.threecolumn li {
 .landingcontent table {
   border:0;
   width:50%;
+}
+.landingcontent table.BBFormTable, table.BBDocumentDisplayTable {
+  width:100%;
 }
 .back-to-top {
   float: right; 
@@ -7523,9 +7612,9 @@ ul.threecolumn li {
     margin: 0 1rem 1rem;
     padding: 0rem;
     width: 80%;
-  }
-
+  }  
 }
+
 /*--END MEDIA QUERY TO FIX SMALL THINGS--*/
 
 
