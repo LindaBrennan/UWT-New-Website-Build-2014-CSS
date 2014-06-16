@@ -7078,7 +7078,9 @@ span.exec-title {
   font-weight:bold;
   color:#54585a;
   font-size:1.0rem;
- }
+}
+
+
 /*--END DETAILS PAGE--*/
 
 
@@ -7159,7 +7161,7 @@ span.exec-title {
   color:#54585a;
   text-decoration:underline;
   margin-top:0;
-  padding: 1rem 1.5rem 0.5rem 0;
+  padding: 1rem 2.0rem 0.5rem 0;
 }
 p.sidebar-logo {
   padding-top:0;
