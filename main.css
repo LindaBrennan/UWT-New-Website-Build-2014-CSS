@@ -6011,14 +6011,24 @@ p.large {
   padding:1rem 0 0 0;
   margin:0;
 }
-span.infographic-darkblue {  
+span.infographic-darkblue,
+span.infographic-blue {  
   font-size:6.5rem;
   display:block;
   margin:3rem 0 1.5rem 0; 
   font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif;
   letter-spacing: -0.2rem; 
-
 }
+p span.infographic-red {  
+  font-size:6.5rem;
+  display:block;
+  margin:0;
+  padding:0; 
+  font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: -0.2rem;
+  color:#da291c; 
+}
+
 /*Set the default style for links*/
 a, a:visited {
   color:#0072ce;
@@ -7088,8 +7098,8 @@ span.exec-title {
 
 /*Text Only Sidebar Items - for example, charitable registration number*/
 .sidebarinner .sidebar-textonly p {
-  line-height:1.0rem;
-  font-size:0.8rem;
+  line-height:1.2rem;
+  font-size:0.9rem;
   color:#797979;
   font-family: "Avenir LT W01 85 Heavy", Arial, "Helvetica Neue", Helvetica, sans-serif; 
 }
@@ -7280,22 +7290,29 @@ p.sidebar-logo {
 .sidebar-logotext .inner {
   padding:0.5rem;
 }
-.sidebar-logotext .inner p {
+.sidebarinner .sidebar-logotext .inner p {
   font-size:0.9rem;
   line-height:1.5rem;   
   margin-bottom:0;
-  color:#707372;
+  color:#54585a;
   padding-top:0.5rem; 
 }
 .sidebar-logotext .inner hr {
   margin: 0.5rem 0 0.5rem 0;
 }
-.sidebar-logotext .inner p a, .sidebar-logotext .inner p a:visited {
+.sidebarinner .sidebar-logotext .inner p a, 
+.sidebarinner .sidebar-logotext .inner p a:visited {
   border-bottom: 1px dotted #54585a;
   color:#54585a;
 }
-.sidebar-logotext .inner p a:hover, .sidebar-logotext .inner p a:focus, .sidebar-logotext .inner p a:active, .sidebar-logotext .inner p a:visited:hover, .sidebar-logotext .inner p a:visited:focus, .sidebar-logotext .inner p a:visited:active {  
+.sidebarinner .sidebar-logotext .inner p a:hover, 
+.sidebarinner .sidebar-logotext .inner p a:focus, 
+.sidebarinner .sidebar-logotext .inner p a:active, 
+.sidebarinner .sidebar-logotext .inner p a:visited:hover, 
+.sidebarinner .sidebar-logotext .inner p a:visited:focus, 
+.sidebarinner .sidebar-logotext .inner p a:visited:active {  
   border-bottom: 1px solid #54585a;
+  color:#54585a;
 }
 .sidebar-logotext p.chevron {
   text-align:right;
@@ -7335,17 +7352,28 @@ p.sidebar-logo {
 .sidebar-logotext-grey .inner hr {
   margin: 0.5rem 0 0.5rem 0;
 }
-.sidebar-logotext-grey .inner p a, .sidebar-logotext .inner p a:visited {
+.sidebar-logotext-grey .inner p a, .sidebar-logotext-grey .inner p a:visited {
   border-bottom: 1px dotted #fff;
   color:#fff;
 }
-.sidebar-logotext-grey .inner p a:hover, .sidebar-logotext-grey .inner p a:focus, .sidebar-logotext-grey .inner p a:active, .sidebar-logotext-grey .inner p a:visited:hover, .sidebar-logotext-grey .inner p a:visited:focus, .sidebar-logotext-grey .inner p a:visited:active {  
+.sidebar-logotext-grey .inner p a:hover, 
+.sidebar-logotext-grey .inner p a:focus, 
+.sidebar-logotext-grey .inner p a:active, 
+.sidebar-logotext-grey .inner p a:visited:hover, 
+.sidebar-logotext-grey .inner p a:visited:focus, 
+.sidebar-logotext-grey .inner p a:visited:active {  
   border-bottom: 1px solid #fff;
 }
-.sidebar-logotext-grey .inner p.chevron a, .sidebar-logotext .inner p.chevron a:visited {
+.sidebar-logotext-grey .inner p.chevron a, 
+.sidebar-logotext-grey .inner p.chevron a:visited {
   border-bottom: 0;
 }
-.sidebar-logotext-grey .inner p.chevron a:hover, .sidebar-logotext-grey .inner p.chevron a:focus, .sidebar-logotext-grey .inner p.chevron a:active, .sidebar-logotext-grey .inner p.chevron a:visited:hover, .sidebar-logotext-grey .inner p.chevron a:visited:focus, .sidebar-logotext-grey .inner p.chevron a:visited:active {  
+.sidebar-logotext-grey .inner p.chevron a:hover, 
+.sidebar-logotext-grey .inner p.chevron a:focus, 
+.sidebar-logotext-grey .inner p.chevron a:active, 
+.sidebar-logotext-grey .inner p.chevron a:visited:hover, 
+.sidebar-logotext-grey .inner p.chevron a:visited:focus, 
+.sidebar-logotext-grey .inner p.chevron a:visited:active {  
   border-bottom: 0;
 }
 
@@ -7510,6 +7538,8 @@ p.sidebar-logo {
         font-size:1rem;
       }
     }
+
+
 
 /*--END SIDEBAR ITEMS--*/
 
