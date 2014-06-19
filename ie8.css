@@ -41,6 +41,9 @@
 #landingcontent .large-3{
 	width: 25%;
 }
+#landingcontent .large-6{
+	width: 50%
+}
 #landingcontent .large-9{
 	width: 75%
 }

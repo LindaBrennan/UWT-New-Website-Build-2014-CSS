@@ -6473,6 +6473,10 @@ ul.alphalist li a:hover, ul.alphalist li a:focus, ul.alphalist li a:active {
 .pagecontainer aside {
   background-color:#dddddd;  
 }
+/* fix for smallnav displaying before JavaScript runs */
+.smallnav{visibility: hidden;}
+aside .smallnav{visibility: visible;}
+/* end small nav fix */
 .smallnav {
   background-color:#54585a;
   color:#fff;
@@ -7659,6 +7663,9 @@ ul.threecolumn li {
 form[action*="pagedesign"] #orbitGuide {
   display: block;
 }
+#slideshow ul{
+margin:0;
+}
 /* Display only the first image before js "kicks-in"*/
 #slideshow ul li { 
   display: none;
@@ -7802,6 +7809,14 @@ a.orbit-prev, a.orbit-prev:visited, a.orbit-next, a.orbit-next:visited {
     }
 
   }
+  /* Target iPad Landscape */
+@media only screen  and  /*!YUI Compressor*/ (min-device-width : 768px)  and  /*!YUI Compressor*/ (max-device-width : 1024px) and  /*!YUI Compressor*/ (orientation : landscape){
+ 	#slideshow .orbit-container .orbit-caption{
+ 		height: 135px;
+ 		top:80px;
+ 		width: 300px;
+ 	}
+}
 
 /*--END ORBIT STYLES --*/
 
